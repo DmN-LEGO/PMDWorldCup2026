@@ -11,28 +11,6 @@ brick_cup_scorer.py     — Auto-scorer cron script (runs via GitHub Actions)
   brick-cup-cron.yml    — GitHub Actions workflow (runs every 15 mins)
 ```
 
-## Deploy in 3 steps
-
-### Step 1 — Cloudflare Pages
-1. Push this repo to GitHub
-2. Go to Cloudflare Pages → Create project → Connect to GitHub → select this repo
-3. Build settings: Framework = None, Build command = (empty), Output = /
-4. Deploy. Your game URL will be something like `brick-cup.pages.dev`
-
-
-### Step 3 — Firestore Rules
-In Firebase Console → Firestore → Rules, set:
-```
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write: if true;
-    }
-  }
-}
-```
-(Fine for an internal game — tighten later if needed)
 
 ## How it works
 
