@@ -5,28 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>PMDF Brick Cup 2026</title>
-<!-- Firebase Auth for Google Sign-In — loaded with defer so DOM+scripts are ready -->
-<script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-<script>
-// Init fires after deferred scripts complete — guaranteed firebase global exists
-function _initFirebase(){
-  if(window._fbAuth)return; // already done
-  try{
-    window._fbApp=firebase.initializeApp({
-      apiKey:"AIzaSyCF8NqKVTqBuV37qAaefzL6q6RVjoChous",
-      authDomain:"worldcup2026-4d178.firebaseapp.com",
-      projectId:"worldcup2026-4d178"
-    });
-    window._fbAuth=firebase.auth();
-    window._googleProvider=new firebase.auth.GoogleAuthProvider();
-    window._googleProvider.setCustomParameters({prompt:"select_account"});
-  }catch(e){console.warn("Firebase Auth init failed:",e);}
-}
-// Fire after all deferred scripts have run
-document.addEventListener("DOMContentLoaded",_initFirebase);
-window.addEventListener("load",_initFirebase); // belt+braces
-</script>
+<!-- Firebase Auth loaded at end of body (synchronous, guaranteed order) -->
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 
 
@@ -1020,30 +999,131 @@ const POOL=[
   {id:'us13',n:'Ferreira J',c:'USA',p:'FWD',r:'bronze',f:'🇺🇸'},
 ];
 const PREDS=[
-  // Window 1 — Group Stage kick-off
-  {id:'p1',window:1,type:'safe',match:'Brazil vs Mexico',question:'Who wins?',opts:['Brazil','Draw','Mexico'],reward:10},
-  {id:'p2',window:1,type:'brave',match:'England vs USA',question:'3+ goals scored?',opts:['Yes','No'],reward:20},
-  {id:'p3',window:1,type:'chaos',match:'Group Stage',question:'Pick the Week 1 upset!',opts:['Morocco beats France','Japan beats Argentina','Canada beats Portugal'],reward:40},
-  // Window 2 — Group Stage second round
-  {id:'p4',window:2,type:'safe',match:'England vs Argentina',question:'Who wins?',opts:['England','Draw','Argentina'],reward:10},
-  {id:'p5',window:2,type:'brave',match:'Spain vs Japan',question:'Spain to win by 2+?',opts:['Yes','No'],reward:20},
-  {id:'p6',window:2,type:'chaos',match:'Group Stage',question:'Biggest Week 2 shock?',opts:['USA beats Brazil','Senegal tops their group','Australia reaches R16'],reward:40},
-  // Window 3 — Round of 16
-  {id:'p7',window:3,type:'safe',match:'Round of 16',question:'Which nation exits earliest?',opts:['Australia','Canada','Senegal','Mexico'],reward:10},
-  {id:'p8',window:3,type:'brave',match:'Round of 16',question:'Will a match go to extra time?',opts:['Yes','No'],reward:20},
-  {id:'p9',window:3,type:'chaos',match:'Round of 16',question:'Biggest R16 upset?',opts:['Morocco beats France','Japan beats Spain','USA beats England'],reward:40},
-  // Window 4 — Quarter-Finals
-  {id:'p10',window:4,type:'safe',match:'Quarter-Finals',question:'Who reaches the semis?',opts:['Brazil','Argentina','England','France'],reward:10},
-  {id:'p11',window:4,type:'brave',match:'Quarter-Finals',question:'Any QF to go to penalties?',opts:['Yes','No'],reward:20},
-  {id:'p12',window:4,type:'chaos',match:'Quarter-Finals',question:'QF Golden Boot scorer?',opts:['Mbappé','Kane','Messi','Vinicius Jr'],reward:40},
-  // Window 5 — Semi-Finals
-  {id:'p13',window:5,type:'safe',match:'Semi-Finals',question:'Who reaches the Final?',opts:['France','Argentina','England','Spain'],reward:10},
-  {id:'p14',window:5,type:'brave',match:'Semi-Finals',question:'Will either semi go to extra time?',opts:['Yes','No'],reward:20},
-  {id:'p15',window:5,type:'chaos',match:'Semi-Finals',question:'Semi-Final shock result?',opts:['0-0 after 90 mins','Two red cards in one game','Own goal decides a match'],reward:40},
-  // Window 6 — Final
-  {id:'p16',window:6,type:'safe',match:'The Final',question:'Who lifts the trophy?',opts:['France','Argentina','England','Spain','Brazil','Other'],reward:20},
-  {id:'p17',window:6,type:'brave',match:'The Final',question:'Will the Final go to extra time?',opts:['Yes','No'],reward:30},
-  {id:'p18',window:6,type:'chaos',match:'The Final',question:'Tournament top scorer?',opts:['Mbappé','Kane','Messi','Vinicius Jr','Bellingham'],reward:50},
+  // ── Window 1 — Group Stage Matchday 1 (Jun 11–17) ──
+  // Submit before Thu 11 Jun 3pm ET — resolved after all MD1 matches finish
+  {id:'p1',window:1,type:'safe',
+    match:'Matchday 1',
+    question:'Which group produces the highest-scoring match?',
+    opts:['Group A or B','Group C or D','Group E or F','Group G–L'],
+    reward:10,
+    note:'Highest single match total goals in Matchday 1'},
+  {id:'p2',window:1,type:'brave',
+    match:'Matchday 1',
+    question:'Will Brazil keep a clean sheet in their first match?',
+    opts:['Yes','No'],
+    reward:20,
+    note:'Brazil vs Haiti, Jun 13 — zero goals conceded = Yes'},
+  {id:'p3',window:1,type:'chaos',
+    match:'Matchday 1',
+    question:'Pick the biggest upset of Matchday 1',
+    opts:['Morocco beat France (MD2)','Japan beat Netherlands','Canada beat Portugal','England lose points'],
+    reward:40,
+    note:'Chaos — you resolve this manually after MD1'},
+
+  // ── Window 2 — Group Stage Matchday 2 (Jun 18–23) ──
+  // Submit before Thu 18 Jun 12pm ET
+  {id:'p4',window:2,type:'safe',
+    match:'Matchday 2',
+    question:'Who wins the Brazil vs Morocco group clash?',
+    opts:['Brazil','Draw','Morocco'],
+    reward:10,
+    note:'Group C — Jun 19. Direct result, auto-resolvable'},
+  {id:'p5',window:2,type:'brave',
+    match:'Matchday 2',
+    question:'Will the France vs Senegal match have 3+ goals?',
+    opts:['Yes','No'],
+    reward:20,
+    note:'Group I — Jun 20. 3 or more total goals = Yes'},
+  {id:'p6',window:2,type:'chaos',
+    match:'Matchday 2',
+    question:'Pick the Matchday 2 shock',
+    opts:['USA beat Australia','Japan beat Netherlands','Senegal top Group I','Canada win group'],
+    reward:40,
+    note:'Chaos — resolve manually after MD2'},
+
+  // ── Window 3 — Group Stage Matchday 3 (Jun 24–27) ──
+  // Submit before Wed 24 Jun 9pm ET
+  {id:'p7',window:3,type:'safe',
+    match:'Matchday 3',
+    question:'Which of our game teams finishes bottom of their group?',
+    opts:['Canada','Australia','Senegal','Mexico'],
+    reward:10,
+    note:'Group stage exit — objectively verifiable after MD3'},
+  {id:'p8',window:3,type:'brave',
+    match:'Matchday 3',
+    question:'Will England top Group L?',
+    opts:['Yes','No'],
+    reward:20,
+    note:'England in Group L with Croatia, Ghana, Panama'},
+  {id:'p9',window:3,type:'chaos',
+    match:'Matchday 3',
+    question:'Most dramatic MD3 moment',
+    opts:['Last-minute winner decides group','Penalty in 90th min','Red card changes outcome','0-0 that sends a giant home'],
+    reward:40,
+    note:'Chaos — resolve manually after MD3'},
+
+  // ── Window 4 — Round of 32 + Round of 16 (Jun 28–Jul 7) ──
+  // Submit before Sun 28 Jun 12pm ET
+  {id:'p10',window:4,type:'safe',
+    match:'Knockouts',
+    question:'Which of our game teams goes furthest in the R32?',
+    opts:['Brazil','France','England','Argentina'],
+    reward:10,
+    note:'Team that wins most R32+R16 matches'},
+  {id:'p11',window:4,type:'brave',
+    match:'Knockouts',
+    question:'Will any R16 match go to extra time?',
+    opts:['Yes','No'],
+    reward:20,
+    note:'Any of the 8 R16 matches — 90 mins not enough = Yes'},
+  {id:'p12',window:4,type:'chaos',
+    match:'Knockouts',
+    question:'Biggest knockout upset',
+    opts:['Morocco beats Spain or France','Japan beats Germany or Netherlands','USA beats Brazil or Argentina','Senegal beats England or Portugal'],
+    reward:40,
+    note:'Chaos — resolve manually after R16'},
+
+  // ── Window 5 — Quarter-Finals (Jul 9–11) ──
+  // Submit before Thu 9 Jul 4pm ET
+  {id:'p13',window:5,type:'safe',
+    match:'Quarter-Finals',
+    question:'Which nation reaches both semi-finals... pick one finalist',
+    opts:['France','Argentina','England','Spain','Brazil','Portugal'],
+    reward:10,
+    note:'Pick a team that will be in the semis — objectively verifiable'},
+  {id:'p14',window:5,type:'brave',
+    match:'Quarter-Finals',
+    question:'Will any quarter-final go to penalties?',
+    opts:['Yes','No'],
+    reward:20,
+    note:'Any of the 4 QFs reaching a shootout = Yes'},
+  {id:'p15',window:5,type:'chaos',
+    match:'Quarter-Finals',
+    question:'QF top performer — who scores most across all 4 QFs?',
+    opts:['Mbappé','Kane','Messi','Vinicius Jr','Bellingham','Someone else'],
+    reward:40,
+    note:'Chaos — resolve manually after QFs'},
+
+  // ── Window 6 — Semis + Final (Jul 14–19) ──
+  // Submit before Tue 14 Jul 3pm ET
+  {id:'p16',window:6,type:'safe',
+    match:'The Final',
+    question:'Who wins the World Cup?',
+    opts:['France','Argentina','England','Spain','Brazil','Other'],
+    reward:20,
+    note:'Winner of Jul 19 Final — objectively verifiable'},
+  {id:'p17',window:6,type:'brave',
+    match:'The Final',
+    question:'Will the Final go to extra time or penalties?',
+    opts:['Yes — extra time or pens','No — decided in 90 mins'],
+    reward:30,
+    note:'Either ET or shootout = Yes'},
+  {id:'p18',window:6,type:'chaos',
+    match:'Tournament',
+    question:'Who is the tournament Golden Boot winner?',
+    opts:['Mbappé','Kane','Messi','Vinicius Jr','Bellingham','Someone else'],
+    reward:50,
+    note:'Chaos — resolve manually after the Final'},
 ];
 const BRACKETS=[
   {phase:'Window 1 · Group Stage Matchday 1 · Jun 11–17',lock:'Thu 11 Jun, 3pm ET / 8pm BST',matches:[
@@ -1083,7 +1163,7 @@ const BRACKETS=[
     {home:'Mexico',away:'South Korea',hf:'🇲🇽',af:'🇰🇷',date:'Jun 18',grp:'A'},
     // Group B
     {home:'Canada',away:'Qatar',hf:'🇨🇦',af:'🇶🇦',date:'Jun 18',grp:'B'},
-    // Group C ⚡ Brazil vs Morocco — they're in the same group!
+    // Group C ⚡ Brazil vs Morocco — they’re in the same group!
     {home:'Brazil',away:'Morocco',hf:'🇧🇷',af:'🇲🇦',date:'Jun 19',grp:'C',clash:true},
     {home:'Haiti',away:'Scotland',hf:'🇭🇹',af:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',date:'Jun 19',grp:'C'},
     // Group D ⚡ USA vs Australia — same group!
@@ -1195,7 +1275,7 @@ async function joinWithPin(){
   if(!nick||nick.length<2){toast('Enter a nickname (2+ chars)','err');document.getElementById('nn-new').focus();return;}
   if(!/^[a-zA-Z0-9_. \-]+$/.test(nick)){toast('Nickname: letters, numbers, spaces only','err');return;}
   if(!pin||pin.length!==4||!/^\d{4}$/.test(pin)){toast('PIN must be 4 digits','err');document.getElementById('pin-new').focus();return;}
-  if(pin!==pinConfirm){toast('PINs don't match','err');document.getElementById('pin-confirm').focus();return;}
+  if(pin!==pinConfirm){toast('PINs don’t match','err');document.getElementById('pin-confirm').focus();return;}
   const btn=document.getElementById('join-pin-btn');btn.disabled=true;btn.textContent='Creating account…';
   try{
     const existing=await fsList('players',[['nickname','EQUAL',nick]]);
@@ -1448,12 +1528,11 @@ function renderHome(){
     const wLabel=wSchedule?wSchedule.label:'Window '+winNum;
     const shortLabel=wSchedule?wSchedule.label.split(' · ')[0]:'Window '+winNum;    document.getElementById('win-label').textContent='W'+winNum+' · '+shortLabel;
     if(countdown){
-      document.getElementById('win-info').textContent='⏰ '+countdown;
-      // Urgent styling if <24h
       const diff=lockDate-new Date();
+      document.getElementById('win-info').textContent='⏰ '+countdown+' · Set team + predict!';
       document.getElementById('win-info').style.color=diff<86400000?'var(--accent)':'';
     }else if(wSchedule){
-      document.getElementById('win-info').textContent=wSchedule.lockDisplay?' Locks: '+wSchedule.lockDisplay:'Set team before match!';
+      document.getElementById('win-info').textContent='Locks: '+wSchedule.lockDisplay;
     }
   }
   // Refresh countdown every minute while on home screen
@@ -1676,7 +1755,7 @@ function buildListingEl(l,isMine){
   btn.onclick=()=>isMine?cancelByLid(l.id,l.cardId):buyCard(l);
   el.querySelector('.mkt-right').appendChild(btn);return el;
 }
-// Global wrapper for onclick attr (can't use async inline onclick safely)
+// Global wrapper for onclick attr (can’t use async inline onclick safely)
 async function _storeBuy(lid){
   const listing=await fsGet('listings',lid);
   if(listing)await buyStoreCard(listing);
@@ -1721,11 +1800,55 @@ async function renderPred(){
   const myP={};myPreds.forEach(p=>{myP[p.predId]=p;});
   const wPreds=PREDS.filter(p=>p.window===(CW.number||1));
   if(!wPreds.length){con.innerHTML='<div style="color:var(--muted);padding:16px;text-align:center;">No predictions for this window.</div>';return;}
-  const tl={safe:'🟢 Safe',brave:'🟡 Brave',chaos:'🔴 Chaos'};
+  const rewardColor={safe:'var(--green)',brave:'var(--accent)',chaos:'var(--red)'};
+  const typeIcon={safe:'🟢',brave:'🟡',chaos:'🔴'};
+  const typeName={safe:'Safe',brave:'Brave',chaos:'Chaos'};
   wPreds.forEach(pred=>{
     const mp=myP[pred.id],locked=CW.locked||!!mp;
     const card=document.createElement('div');card.className='pred-card';
-    card.innerHTML=`<div class="pred-top"><div style="min-width:0;"><div style="font-size:10px;color:var(--muted);margin-bottom:2px;">${tl[pred.type]} · +${pred.reward} 🧱 · ${esc(pred.match)}</div><div class="pred-q">${esc(pred.question)}</div></div>${mp?'<div style="font-size:10px;padding:2px 6px;border-radius:3px;background:var(--bg3);font-family:var(--fm);flex-shrink:0;">'+(mp.status==='won'?'✅ +'+pred.reward+'🧱':mp.status==='lost'?'❌ Lost':'⏳')+'</div>':''}</div><div class="pred-opts" id="po-${pred.id}"></div>`;
+
+    // Header row
+    const top=document.createElement('div');top.className='pred-top';
+    const left=document.createElement('div');left.style.cssText='min-width:0;flex:1;';
+
+    // Type + reward line
+    const meta=document.createElement('div');
+    meta.style.cssText='font-size:10px;margin-bottom:3px;';
+    meta.innerHTML=typeIcon[pred.type]
+      +' <span style="color:'+rewardColor[pred.type]+';font-weight:700;">'+typeName[pred.type]+'</span>'
+      +' &middot; <span style="color:'+rewardColor[pred.type]+';font-weight:700;">+'+pred.reward+' &#x1F9F1;</span>'
+      +' &middot; <span style="color:var(--muted);">'+esc(pred.match)+'</span>';
+    left.appendChild(meta);
+
+    // Question
+    const q=document.createElement('div');q.className='pred-q';q.textContent=pred.question;
+    left.appendChild(q);
+
+    // Chaos note
+    if(pred.type==='chaos'&&!mp){
+      const note=document.createElement('div');
+      note.style.cssText='font-size:9px;color:var(--red);font-family:var(--fm);margin-top:3px;';
+      note.textContent='Admin resolves after window ends';
+      left.appendChild(note);
+    }
+    top.appendChild(left);
+
+    // Status badge (right side)
+    if(mp){
+      const badge=document.createElement('div');
+      badge.style.cssText='font-size:10px;padding:3px 7px;border-radius:3px;background:var(--bg3);font-family:var(--fm);flex-shrink:0;font-weight:700;white-space:nowrap;';
+      if(mp.status==='won'){badge.innerHTML='<span style="color:var(--green);">&#x2705; +'+pred.reward+'&#x1F9F1;</span>';}
+      else if(mp.status==='lost'){badge.innerHTML='<span style="color:var(--red);">&#x274C; Lost</span>';}
+      else{badge.innerHTML='<span style="color:var(--muted);">&#x23F3; Pending</span>';}
+      top.appendChild(badge);
+    }
+    card.appendChild(top);
+
+    // Options container
+    const optsDiv=document.createElement('div');optsDiv.className='pred-opts';optsDiv.id='po-'+pred.id;
+    card.appendChild(optsDiv);
+    con.appendChild(card);
+
     const opts=card.querySelector('#po-'+pred.id);
     pred.opts.forEach(opt=>{
       const btn=document.createElement('div');btn.className='pred-opt'+(mp&&mp.pick===opt?' '+(mp.status==='won'?'won':mp.status==='lost'?'lost':'sel'):'');
@@ -1799,7 +1922,7 @@ const HTP=[
   {n:2,t:'Pick Your Starting 11',d:'<strong>1 GK · 4 DEF · 3 MID · 3 FWD</strong>. Only your Starting 11 scores points. Auto-Fill picks your best available.',chips:[['green','1 GK · 4 DEF · 3 MID · 3 FWD'],['red','Bench doesn\'t score']]},
   {n:3,t:'Earn Points Every Match',d:'<strong>Goal +8 · Assist +5 · Win +4 · Draw +2 · Clean Sheet (GK/DEF) +5 · Red −5</strong>.',chips:[['gold','Goal +8'],['gold','Win +4'],['green','Clean Sheet +5'],['red','Red −5']]},
   {n:4,t:'Buy & Sell Players',d:'Spend bricks on <strong>Card Packs</strong> (50 🧱 → 3 random players) or grab players from the <strong>Window Store</strong> (⚡ 30 🧱 each — 20 players appear when each window opens, fastest fingers first). To sell: <strong>My Cards → tap → List on Market</strong>. Max 3 listings, 10% fee.',chips:[['gold','50 🧱 → Card Pack'],['gold','⚡ 30🧱 → Window Store'],['green','+20🧱 every window'],['','Max 3 listings']]},
-  {n:5,t:'Earn Bricks',d:'You earn bricks three ways: <strong>Predictions</strong> — 3 per window, Safe +10, Brave +20, Chaos +40 🧱 if correct. <strong>Participation bonus</strong> — +20 🧱 automatically paid every time a new window opens (just have a saved team). <strong>Transfer Market</strong> — earn bricks when a colleague buys your listed card.',chips:[['green','Prediction: +10/20/40🧱'],['gold','New window: +20🧱'],['','Selling a card pays out too']]},
+  {n:5,t:'Earn Bricks',d:'<strong>Predictions</strong> — 3 per window. Submit them <em>before the window locks</em> (the lock time is shown on the Fixtures screen). Safe +10🧱, Brave +20🧱, Chaos +40🧱 if you get it right. Safe + Brave pay out automatically after matches finish. Chaos predictions are resolved by admin. <strong>Participation bonus</strong> — +20 🧱 automatically paid when each new window opens (just have a saved team). <strong>Market sales</strong> — earn bricks when someone buys your listed card.',chips:[['green','Safe: +10🧱 auto-paid'],['gold','Brave: +20🧱 auto-paid'],['red','Chaos: +40🧱 admin resolves'],['gold','New window: +20🧱']]},
 ];
 function buildHowTo(){
   const con=document.getElementById('htp-steps');if(!con)return;con.innerHTML='';
@@ -2069,6 +2192,24 @@ function toast(msg,type){const t=document.createElement('div');t.className='toas
   if(verEl)verEl.innerHTML='v'+BUILD_VERSION+'<br>'+BUILD_DATE;
   const ok=await tryAutoLogin();
   if(!ok){S('landing');landShowChoose();}
+})();
+</script>
+<!-- Firebase Auth — synchronous load at end of body guarantees firebase global exists -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script>
+(function(){
+  try{
+    if(window._fbAuth)return;
+    window._fbApp=firebase.initializeApp({
+      apiKey:"AIzaSyCF8NqKVTqBuV37qAaefzL6q6RVjoChous",
+      authDomain:"worldcup2026-4d178.firebaseapp.com",
+      projectId:"worldcup2026-4d178"
+    });
+    window._fbAuth=firebase.auth();
+    window._googleProvider=new firebase.auth.GoogleAuthProvider();
+    window._googleProvider.setCustomParameters({prompt:"select_account"});
+  }catch(e){console.warn("Firebase Auth init failed:",e);}
 })();
 </script>
 </body>
