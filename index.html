@@ -263,7 +263,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:15px
   <!-- PANEL 1: Choose auth method -->
   <div id="land-auth-choice" class="hidden" style="width:100%;display:flex;flex-direction:column;gap:0;">
    <div style="font-family:var(--fh);font-size:18px;font-weight:900;text-align:center;margin-bottom:4px;">Join or sign in</div>
-   <div style="color:var(--muted);font-size:12px;text-align:center;margin-bottom:16px;">New players get 16 free cards + 100 🧱</div>
+   <div style="color:var(--muted);font-size:12px;text-align:center;margin-bottom:16px;">New players get 40 free cards + 100 🧱</div>
    <!-- Google button -->
    <button class="btn btn-full" onclick="googleSignIn()" style="background:#fff;color:#1a1a1a;border:1.5px solid #ddd;font-size:14px;font-family:var(--fb);font-weight:600;letter-spacing:.01em;margin-bottom:8px;min-height:48px;">
     <svg width="20" height="20" viewBox="0 0 48 48" style="flex-shrink:0;"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.08 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-3.58-13.46-8.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
@@ -455,11 +455,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:15px
    </div>
   </div>
   <div id="s-packs" class="screen">
-   <div class="sh">Open a Card Pack</div><div class="ss">50 bricks · 3 random players</div>
+   <div class="sh">Open a Card Pack</div><div class="ss">50 bricks · 15 random players</div>
    <div class="pack-box">
     <div style="font-size:52px;margin-bottom:10px;">📦</div>
     <div style="font-family:var(--fh);font-size:18px;font-weight:900;margin-bottom:4px;">Standard Card Pack</div>
-    <div style="color:var(--muted);font-size:11px;margin-bottom:14px;line-height:1.5;">3 random player cards · Bronze 65% · Silver 25% · Gold 10%</div>
+    <div style="color:var(--muted);font-size:11px;margin-bottom:14px;line-height:1.5;">15 random player cards · Bronze 65% · Silver 25% · Gold 10%</div>
     <button class="btn btn-primary btn-full" id="pack-btn" onclick="openPack()" style="font-size:15px;">Open Card Pack — 50 🧱</button>
    </div>
    <div id="pack-reveal" class="hidden">
@@ -495,21 +495,55 @@ body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:15px
    <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;align-items:center;">
     <div class="tabs" id="album-tabs" style="margin-bottom:0;flex:1;">
      <button class="tab active" onclick="albumFilter('all',this)">All</button>
-     <button class="tab" onclick="albumFilter('Brazil',this)">🇧🇷 BRA</button>
-     <button class="tab" onclick="albumFilter('France',this)">🇫🇷 FRA</button>
-     <button class="tab" onclick="albumFilter('England',this)">󠁧󠁢󠁥󠁮󠁧󠁿ENG</button>
-     <button class="tab" onclick="albumFilter('Germany',this)">🇩🇪 GER</button>
      <button class="tab" onclick="albumFilter('Argentina',this)">🇦🇷 ARG</button>
-     <button class="tab" onclick="albumFilter('Spain',this)">🇪🇸 ESP</button>
-     <button class="tab" onclick="albumFilter('Portugal',this)">🇵🇹 POR</button>
-     <button class="tab" onclick="albumFilter('Netherlands',this)">🇳🇱 NED</button>
-     <button class="tab" onclick="albumFilter('Morocco',this)">🇲🇦 MAR</button>
-     <button class="tab" onclick="albumFilter('Japan',this)">🇯🇵 JPN</button>
-     <button class="tab" onclick="albumFilter('USA',this)">🇺🇸 USA</button>
-     <button class="tab" onclick="albumFilter('Mexico',this)">🇲🇽 MEX</button>
-     <button class="tab" onclick="albumFilter('Senegal',this)">🇸🇳 SEN</button>
-     <button class="tab" onclick="albumFilter('Canada',this)">🇨🇦 CAN</button>
      <button class="tab" onclick="albumFilter('Australia',this)">🇦🇺 AUS</button>
+     <button class="tab" onclick="albumFilter('Austria',this)">🇦🇹 AUT</button>
+     <button class="tab" onclick="albumFilter('Algeria',this)">🇩🇿 ALG</button>
+     <button class="tab" onclick="albumFilter('Belgium',this)">🇧🇪 BEL</button>
+     <button class="tab" onclick="albumFilter('Bosnia-Herzegovina',this)">🇧🇦 BIH</button>
+     <button class="tab" onclick="albumFilter('Brazil',this)">🇧🇷 BRA</button>
+     <button class="tab" onclick="albumFilter('Canada',this)">🇨🇦 CAN</button>
+     <button class="tab" onclick="albumFilter('Cape Verde',this)">🇨🇻 CPV</button>
+     <button class="tab" onclick="albumFilter('Colombia',this)">🇨🇴 COL</button>
+     <button class="tab" onclick="albumFilter('Croatia',this)">🇭🇷 CRO</button>
+     <button class="tab" onclick="albumFilter('Curaçao',this)">🇨🇼 CUW</button>
+     <button class="tab" onclick="albumFilter('Czechia',this)">🇨🇿 CZE</button>
+     <button class="tab" onclick="albumFilter('DR Congo',this)">🇨🇩 COD</button>
+     <button class="tab" onclick="albumFilter('Ecuador',this)">🇪🇨 ECU</button>
+     <button class="tab" onclick="albumFilter('Egypt',this)">🇪🇬 EGY</button>
+     <button class="tab" onclick="albumFilter('England',this)">ENG</button>
+     <button class="tab" onclick="albumFilter('France',this)">🇫🇷 FRA</button>
+     <button class="tab" onclick="albumFilter('Germany',this)">🇩🇪 GER</button>
+     <button class="tab" onclick="albumFilter('Ghana',this)">🇬🇭 GHA</button>
+     <button class="tab" onclick="albumFilter('Haiti',this)">🇭🇹 HAI</button>
+     <button class="tab" onclick="albumFilter('Iran',this)">🇮🇷 IRN</button>
+     <button class="tab" onclick="albumFilter('Iraq',this)">🇮🇶 IRQ</button>
+     <button class="tab" onclick="albumFilter('Ivory Coast',this)">🇨🇮 CIV</button>
+     <button class="tab" onclick="albumFilter('Japan',this)">🇯🇵 JPN</button>
+     <button class="tab" onclick="albumFilter('Jordan',this)">🇯🇴 JOR</button>
+     <button class="tab" onclick="albumFilter('Mexico',this)">🇲🇽 MEX</button>
+     <button class="tab" onclick="albumFilter('Morocco',this)">🇲🇦 MAR</button>
+     <button class="tab" onclick="albumFilter('Netherlands',this)">🇳🇱 NED</button>
+     <button class="tab" onclick="albumFilter('New Zealand',this)">🇳🇿 NZL</button>
+     <button class="tab" onclick="albumFilter('Norway',this)">🇳🇴 NOR</button>
+     <button class="tab" onclick="albumFilter('Panama',this)">🇵🇦 PAN</button>
+     <button class="tab" onclick="albumFilter('Paraguay',this)">🇵🇾 PAR</button>
+     <button class="tab" onclick="albumFilter('Portugal',this)">🇵🇹 POR</button>
+     <button class="tab" onclick="albumFilter('Qatar',this)">🇶🇦 QAT</button>
+     <button class="tab" onclick="albumFilter('Saudi Arabia',this)">🇸🇦 KSA</button>
+     <button class="tab" onclick="albumFilter('Scotland',this)">SCO</button>
+     <button class="tab" onclick="albumFilter('Senegal',this)">🇸🇳 SEN</button>
+     <button class="tab" onclick="albumFilter('Serbia',this)">🇷🇸 SRB</button>
+     <button class="tab" onclick="albumFilter('South Africa',this)">🇿🇦 RSA</button>
+     <button class="tab" onclick="albumFilter('South Korea',this)">🇰🇷 KOR</button>
+     <button class="tab" onclick="albumFilter('Spain',this)">🇪🇸 ESP</button>
+     <button class="tab" onclick="albumFilter('Sweden',this)">🇸🇪 SWE</button>
+     <button class="tab" onclick="albumFilter('Switzerland',this)">🇨🇭 SUI</button>
+     <button class="tab" onclick="albumFilter('Tunisia',this)">🇹🇳 TUN</button>
+     <button class="tab" onclick="albumFilter('Turkey',this)">🇹🇷 TUR</button>
+     <button class="tab" onclick="albumFilter('Uruguay',this)">🇺🇾 URU</button>
+     <button class="tab" onclick="albumFilter('USA',this)">🇺🇸 USA</button>
+     <button class="tab" onclick="albumFilter('Uzbekistan',this)">🇺🇿 UZB</button>
     </div>
    </div>
    <div id="album-progress" style="background:var(--chrome2);border:1px solid var(--cb);border-radius:var(--r);padding:9px 12px;margin-bottom:11px;display:flex;align-items:center;justify-content:space-between;">
@@ -747,7 +781,26 @@ function fsStopAll(){Object.values(_polls).forEach(clearInterval);Object.keys(_p
 const ADMIN_PW='finance';
 
 // ── KIT COLOURS ──
-const KIT={'Brazil':['#009C3B','#FFDF00'],'France':['#002395','#FFFFFF'],'England':['#FFFFFF','#CC0000'],'Germany':['#000000','#FFFFFF'],'Argentina':['#75AADB','#FFFFFF'],'Spain':['#C60B1E','#FAB900'],'Portugal':['#006600','#FF0000'],'Netherlands':['#FF6600','#FFFFFF'],'Morocco':['#C1272D','#006233'],'Japan':['#000066','#FFFFFF'],'USA':['#002868','#BF0A30'],'Mexico':['#006847','#FFFFFF'],'Senegal':['#00853F','#FDEF42'],'Canada':['#FF0000','#FFFFFF'],'Australia':['#FFD700','#006400']};
+const KIT={
+  'Brazil':['#009C3B','#FFDF00'],'France':['#002395','#FFFFFF'],'England':['#FFFFFF','#CC0000'],
+  'Germany':['#000000','#FFFFFF'],'Argentina':['#75AADB','#FFFFFF'],'Spain':['#C60B1E','#FAB900'],
+  'Portugal':['#006600','#FF0000'],'Netherlands':['#FF6600','#FFFFFF'],'Morocco':['#C1272D','#006233'],
+  'Japan':['#000066','#FFFFFF'],'USA':['#002868','#BF0A30'],'Mexico':['#006847','#FFFFFF'],
+  'Senegal':['#00853F','#FDEF42'],'Canada':['#FF0000','#FFFFFF'],'Australia':['#FFD700','#006400'],
+  'Belgium':['#000000','#FFD700'],'Croatia':['#FF0000','#FFFFFF'],'Norway':['#EF2B2D','#FFFFFF'],
+  'Uruguay':['#5EB6E4','#FFFFFF'],'Colombia':['#FCD116','#003087'],'Scotland':['#003380','#FFFFFF'],
+  'Switzerland':['#FF0000','#FFFFFF'],'Sweden':['#006AA7','#FECC00'],'Austria':['#ED2939','#FFFFFF'],
+  'South Korea':['#C60C30','#FFFFFF'],'Ecuador':['#FFD100','#003DA5'],'Tunisia':['#E70013','#FFFFFF'],
+  'Ghana':['#006B3F','#FCD116'],'Turkey':['#E30A17','#FFFFFF'],'Algeria':['#006233','#FFFFFF'],
+  'Iran':['#239F40','#FFFFFF'],'Paraguay':['#D52B1E','#FFFFFF'],'Ivory Coast':['#F77F00','#009A44'],
+  'Bosnia-Herzegovina':['#002395','#FFCD00'],'Serbia':['#C6363C','#0C4076'],'Panama':['#DB1116','#FFFFFF'],
+  'New Zealand':['#000000','#FFFFFF'],'Saudi Arabia':['#006C35','#FFFFFF'],'Egypt':['#C8102E','#FFFFFF'],
+  'Cape Verde':['#003893','#CF2027'],'Iraq':['#007A3D','#FFFFFF'],'Jordan':['#007A3D','#FFFFFF'],
+  'Uzbekistan':['#1EB53A','#FFFFFF'],'DR Congo':['#007FFF','#F7D618'],'Qatar':['#8D1B3D','#FFFFFF'],
+  'South Africa':['#007A4D','#FFB612'],'Czechia':['#D7141A','#FFFFFF'],'Curaçao':['#003DA5','#FFFFFF'],
+  'Haiti':['#00209F','#D21034'],
+};
+
 function getKit(c){return KIT[c]||['#3a5a28','#e8f0d8'];}
 
 // ── SKIN PALETTE ──
@@ -818,6 +871,237 @@ const PLAYER_LOOK={
   'Le Normand':[1,'#5c3d11',0],'Nacho':[2,'#1a0a00',0],'Cubarsi':[1,'#5c3d11',0],
   'Robinson A':[5,'#1a0a00',2],'Scally J':[0,'#8B4513',0],'Zimmerman':[0,'#8B4513',0],
   'Musah':[4,'#1a0a00',2],'Ferreira J':[3,'#1a0a00',0],
+
+  // Argentina additions
+  'Pezzella':[3,'#1a0a00',0],'Acuña':[4,'#1a0a00',0],'Lo Celso':[2,'#1a0a00',0],
+  'Almada':[3,'#1a0a00',0],'Soulé':[2,'#c8a26b',0],'Carboni F':[2,'#8B4513',0],
+  'Otamendi':[3,'#1a0a00',3],'Rulli':[3,'#1a0a00',0],
+  // Australia additions
+  'Irvine':[0,'#8B4513',0],'Hrustic':[2,'#1a0a00',0],'Baccus':[4,'#1a0a00',2],
+  'Maclaren':[0,'#c8a26b',0],'Kuol':[6,'#1a0a00',3],'Redmayne':[0,'#c8a26b',0],
+  'Degenek':[1,'#1a0a00',0],'King T':[0,'#8B4513',0],
+  // Brazil additions
+  'Arana':[4,'#1a0a00',0],'Renan Lodi':[4,'#1a0a00',0],'Paquetá':[3,'#1a0a00',0],
+  'Andreas Pereira':[3,'#8B4513',0],'Savinho':[5,'#1a0a00',2],'Martinelli G':[5,'#1a0a00',2],
+  'Estêvão':[4,'#1a0a00',2],'Caju':[4,'#1a0a00',2],
+  // Canada additions
+  'Vitória C':[3,'#1a0a00',0],'Bombito':[5,'#1a0a00',3],'Tabla':[4,'#1a0a00',0],
+  'Koné L':[5,'#1a0a00',2],'Larin':[5,'#1a0a00',2],'Hoilett':[4,'#1a0a00',2],
+  'Cavallini':[4,'#1a0a00',0],'Piette':[3,'#1a0a00',0],
+  // England additions
+  'Walker':[0,'#8B4513',3],'Guehi':[5,'#1a0a00',3],'Gordon A':[0,'#c8a26b',0],
+  'Palmer C':[5,'#1a0a00',2],'Gallagher C':[0,'#8B4513',0],'Rashford':[5,'#1a0a00',2],
+  'Mainoo':[5,'#1a0a00',2],'James R':[5,'#1a0a00',3],
+  // France additions
+  'Konaté I':[6,'#1a0a00',3],'Hernandez L':[2,'#1a0a00',0],'Rabiot':[1,'#8B4513',1],
+  'Fofana Y':[6,'#1a0a00',3],'Coman K':[1,'#c8a26b',0],'Saliba':[5,'#1a0a00',3],
+  'Diaby L':[5,'#1a0a00',2],'Guendouzi':[1,'#1a0a00',1],
+  // Germany additions
+  'Raum':[0,'#c8a26b',0],'Mittelstädt':[0,'#8B4513',0],'Groß':[0,'#8B4513',0],
+  'Andrich':[0,'#8B4513',3],'Brandt':[0,'#c8a26b',1],'Beier':[0,'#c8a26b',0],
+  'Ter Stegen':[0,'#c8a26b',1],'Anton':[0,'#8B4513',0],
+  // Japan additions
+  'Nagatomo':[2,'#1a0a00',0],'Yoshida':[2,'#1a0a00',3],'Kamada':[2,'#1a0a00',0],
+  'Doan':[2,'#1a0a00',0],'Nakayama':[2,'#1a0a00',0],'Maeda D':[2,'#1a0a00',0],
+  'Suzuki A':[2,'#1a0a00',0],'Sakai H':[2,'#1a0a00',0],
+  // Mexico additions
+  'Mier':[3,'#1a0a00',0],'Araujo':[3,'#1a0a00',0],'Romo':[3,'#1a0a00',0],
+  'Antuna':[3,'#1a0a00',0],'Vega H':[3,'#1a0a00',0],'Alvarado R':[3,'#1a0a00',0],
+  'Rodríguez C':[3,'#1a0a00',0],'González H':[3,'#1a0a00',0],
+  // Morocco additions
+  'Attiat-Allah':[3,'#1a0a00',0],'Dari':[3,'#1a0a00',0],'Ezzalzouli':[4,'#1a0a00',2],
+  'El Kaabi':[3,'#1a0a00',0],'Rahimi':[3,'#1a0a00',0],'Louza':[3,'#1a0a00',0],
+  'Benoun':[3,'#1a0a00',0],'Bounou':[3,'#1a0a00',0],
+  // Netherlands additions
+  'Blind':[1,'#5c3d11',0],'Aké':[5,'#1a0a00',3],'Simons X':[5,'#1a0a00',2],
+  'Koopmeiners':[0,'#c8a26b',0],'Bergwijn':[5,'#1a0a00',2],'Zirkzee':[4,'#1a0a00',0],
+  'Bijlow':[0,'#c8a26b',0],'Frimpong':[5,'#1a0a00',3],
+  // Portugal additions
+  'Vitinha':[3,'#1a0a00',0],'Palhinha':[3,'#1a0a00',3],'Pedro Neto':[3,'#1a0a00',0],
+  'Gonçalo Ramos':[3,'#1a0a00',0],'Trincão':[4,'#1a0a00',2],'Bento':[3,'#1a0a00',0],
+  'Mendes N':[3,'#1a0a00',0],'Guerreiro':[3,'#1a0a00',0],
+  // Senegal additions
+  'Sané A':[6,'#1a0a00',3],'Kouyaté C':[6,'#1a0a00',3],'Sarr I':[6,'#1a0a00',2],
+  'Dia B':[6,'#1a0a00',3],'Ndiaye I':[6,'#1a0a00',3],'Mbaye A':[6,'#1a0a00',3],
+  'Badji':[6,'#1a0a00',3],'Mendy F':[6,'#1a0a00',3],
+  // Spain additions
+  'Zubimendi':[2,'#1a0a00',0],'Grimaldo':[3,'#1a0a00',0],'Oyarzabal':[2,'#1a0a00',0],
+  'Ferran Torres':[3,'#1a0a00',0],'Joselu':[2,'#8B4513',0],'Fabián Ruiz':[2,'#1a0a00',0],
+  'Aleix García':[2,'#1a0a00',0],'Vivian':[2,'#1a0a00',0],
+  // USA additions
+  'Acosta':[3,'#1a0a00',0],'Aaronson':[0,'#c8a26b',0],'Pepi':[0,'#8B4513',0],
+  'Mihailovic':[2,'#1a0a00',0],'Sargent':[0,'#c8a26b',0],'Trusty':[5,'#1a0a00',3],
+  'Horvath':[0,'#8B4513',0],'Lletget':[3,'#1a0a00',0],
+  // Belgium
+  'Casteels':[0,'#c8a26b',0],'Castagne':[1,'#8B4513',0],'Faes':[0,'#c8a26b',0],
+  'Vertonghen':[0,'#c8a26b',1],'Theate':[0,'#8B4513',0],'De Bruyne':[0,'#c8a26b',0],
+  'Tielemans':[0,'#8B4513',0],'Onana A':[5,'#1a0a00',3],'Lukaku':[5,'#1a0a00',3],
+  'De Ketelaere':[0,'#c8a26b',0],'Openda':[5,'#1a0a00',3],
+  // Croatia
+  'Livaković':[2,'#1a0a00',0],'Juranović':[2,'#1a0a00',0],'Gvardiol':[1,'#5c3d11',0],
+  'Erlic':[2,'#1a0a00',0],'Sosa B':[2,'#1a0a00',0],'Modrić':[2,'#1a0a00',0],
+  'Kovačić':[2,'#1a0a00',0],'Brozović':[2,'#1a0a00',3],'Kramarić':[2,'#8B4513',0],
+  'Pašalić':[2,'#1a0a00',0],'Budimir':[2,'#1a0a00',0],
+  // Norway
+  'Nyland':[0,'#8B4513',0],'Ryerson':[0,'#c8a26b',0],'Ajer':[0,'#c8a26b',0],
+  'Hanche-Olsen':[0,'#c8a26b',0],'Pedersen M':[0,'#8B4513',0],'Berge S':[0,'#8B4513',0],
+  'Ødegaard':[0,'#c8a26b',0],'Thorsby':[0,'#8B4513',0],'Haaland':[0,'#c8a26b',0],
+  'Sørloth':[0,'#c8a26b',0],'Hauge':[0,'#c8a26b',0],
+  // Uruguay
+  'Rochet':[2,'#1a0a00',0],'Nández':[3,'#1a0a00',0],'Giménez J':[3,'#1a0a00',0],
+  'Godín':[3,'#1a0a00',0],'Olivera':[3,'#1a0a00',0],'Valverde':[3,'#1a0a00',0],
+  'Bentancur':[3,'#1a0a00',0],'De Arrascaeta':[3,'#1a0a00',0],'Núñez D':[3,'#1a0a00',0],
+  'Suárez':[2,'#1a0a00',3],'Cavani':[2,'#1a0a00',0],
+  // Colombia
+  'Vargas C':[3,'#1a0a00',0],'Muñoz':[4,'#1a0a00',0],'Sánchez D':[3,'#1a0a00',0],
+  'Lucumí':[5,'#1a0a00',3],'Mojica':[4,'#1a0a00',2],'Lerma':[3,'#1a0a00',0],
+  'Pérez R':[3,'#1a0a00',0],'James':[3,'#1a0a00',0],'Díaz L':[4,'#1a0a00',2],
+  'Córdoba C':[4,'#1a0a00',0],'Borja':[4,'#1a0a00',0],
+  // Scotland
+  'Gordon A':[0,'#8B4513',0],'Ralston':[0,'#8B4513',0],'Hendry':[0,'#8B4513',0],
+  'Hanley':[0,'#8B4513',0],'Robertson':[0,'#8B4513',0],'McTominay':[0,'#8B4513',0],
+  'McGinn':[0,'#5c3d11',0],'Christie':[0,'#c8a26b',0],'Adams C':[0,'#c8a26b',0],
+  'Dykes':[0,'#8B4513',0],'Shankland':[0,'#8B4513',0],
+  // Switzerland
+  'Sommer':[0,'#c8a26b',0],'Widmer':[0,'#8B4513',0],'Akanji':[5,'#1a0a00',3],
+  'Elvedi':[0,'#8B4513',0],'Rodriguez R':[3,'#1a0a00',0],'Freuler':[0,'#8B4513',0],
+  'Xhaka':[3,'#1a0a00',0],'Embolo':[5,'#1a0a00',3],'Seferović':[3,'#1a0a00',0],
+  'Vargas R':[3,'#1a0a00',0],'Ndoye':[5,'#1a0a00',2],
+  // Sweden
+  'Olsen R':[0,'#c8a26b',0],'Krafth':[0,'#c8a26b',0],'Lindelöf':[0,'#c8a26b',0],
+  'Danielson':[0,'#8B4513',0],'Augustinsson':[0,'#8B4513',0],'Ekdal':[0,'#8B4513',0],
+  'Kulusevski':[0,'#c8a26b',0],'Forsberg':[0,'#c8a26b',0],'Gyökeres':[0,'#c8a26b',0],
+  'Isak':[0,'#c8a26b',0],'Elanga':[5,'#1a0a00',2],
+  // Austria
+  'Pentz':[0,'#8B4513',0],'Lainer':[0,'#8B4513',0],'Posch':[0,'#8B4513',0],
+  'Wöber':[0,'#c8a26b',0],'Hinteregger':[0,'#8B4513',3],'Laimer':[0,'#c8a26b',0],
+  'Grillitsch':[0,'#c8a26b',0],'Sabitzer':[0,'#c8a26b',0],'Gregoritsch':[0,'#8B4513',0],
+  'Arnautović':[2,'#1a0a00',3],'Seiwald':[0,'#8B4513',0],
+  // South Korea
+  'Kim Seung-Gyu':[2,'#1a0a00',0],'Kim Moon-Hwan':[2,'#1a0a00',0],'Kim Min-Jae':[2,'#1a0a00',3],
+  'Jung Seung-Hyun':[2,'#1a0a00',0],'Kim Jin-Su':[2,'#1a0a00',0],'Jung Woo-Young':[2,'#1a0a00',0],
+  'Lee Jae-Sung':[2,'#1a0a00',0],'Hwang In-Beom':[2,'#1a0a00',0],'Son':[2,'#1a0a00',0],
+  'Hwang Hee-Chan':[2,'#1a0a00',0],'Cho Gue-Sung':[2,'#1a0a00',0],
+  // Ecuador
+  'Galíndez':[3,'#1a0a00',0],'Preciado':[4,'#1a0a00',0],'Torres A':[3,'#1a0a00',0],
+  'Hincapié':[4,'#1a0a00',0],'Estupiñán':[4,'#1a0a00',2],'Caicedo M':[5,'#1a0a00',3],
+  'Méndez C':[3,'#1a0a00',0],'Gruezo':[3,'#1a0a00',0],'Valencia E':[4,'#1a0a00',0],
+  'Plata':[4,'#1a0a00',0],'Sarmiento':[3,'#1a0a00',0],
+  // Tunisia
+  'Dahmen':[3,'#1a0a00',0],'Talbi':[3,'#1a0a00',0],'Meriah':[3,'#1a0a00',0],
+  'Bronn':[3,'#1a0a00',0],'Abdi':[3,'#1a0a00',0],'Laidouni':[3,'#1a0a00',0],
+  'Skhiri':[3,'#1a0a00',0],'Ben Romdhane':[3,'#1a0a00',0],'Msakni':[3,'#1a0a00',0],
+  'Khazri':[3,'#1a0a00',0],'Jebali':[3,'#1a0a00',0],
+  // Ghana
+  'Ati-Zigi':[6,'#1a0a00',3],'Lamptey':[6,'#1a0a00',3],'Amartey':[6,'#1a0a00',3],
+  'Mensah J':[6,'#1a0a00',3],'Baba R':[6,'#1a0a00',3],'Partey':[6,'#1a0a00',3],
+  'Salis':[6,'#1a0a00',3],'Kudus':[6,'#1a0a00',2],'Williams I':[6,'#1a0a00',2],
+  'Fatawu':[6,'#1a0a00',2],'Sulemana':[6,'#1a0a00',2],
+  // Turkey
+  'Günok':[3,'#1a0a00',0],'Müldür':[3,'#1a0a00',0],'Demiral':[3,'#1a0a00',0],
+  'Bardakçı':[3,'#1a0a00',0],'Kadioglu':[3,'#1a0a00',0],'Özcan D':[3,'#1a0a00',0],
+  'Yazıcı':[3,'#1a0a00',0],'Aktürkoğlu':[3,'#1a0a00',0],'Yıldız K':[3,'#1a0a00',1],
+  'Güler':[3,'#1a0a00',0],'Calhanoglu':[3,'#1a0a00',0],
+  // Algeria
+  'Mandrea':[3,'#1a0a00',0],'Atal':[3,'#1a0a00',0],'Mandi':[3,'#1a0a00',0],
+  'Tahrat':[3,'#1a0a00',0],'Bensebaini':[3,'#1a0a00',0],'Bennacer':[3,'#1a0a00',0],
+  'Aouar':[3,'#1a0a00',0],'Zerrouki':[3,'#1a0a00',0],'Mahrez':[3,'#1a0a00',0],
+  'Bounedjah':[3,'#1a0a00',0],'Dia B2':[4,'#1a0a00',0],
+  // Iran
+  'Beiranvand':[3,'#1a0a00',0],'Rezaeian':[3,'#1a0a00',0],'Hosseini':[3,'#1a0a00',0],
+  'Kanaanizadegan':[3,'#1a0a00',0],'Mohammadi':[3,'#1a0a00',0],'Ezatolahi':[3,'#1a0a00',0],
+  'Noorollahi':[3,'#1a0a00',0],'Karimi A':[3,'#1a0a00',0],'Taremi':[3,'#1a0a00',0],
+  'Ansarifard':[3,'#1a0a00',0],'Ghoddos':[3,'#1a0a00',1],
+  // Paraguay
+  'Silva A':[3,'#1a0a00',0],'Alderete':[3,'#1a0a00',0],'Balbuena':[4,'#1a0a00',0],
+  'Alonso G':[3,'#1a0a00',0],'Rojas F':[3,'#1a0a00',0],'Cubas':[3,'#1a0a00',0],
+  'Gómez M':[3,'#1a0a00',0],'Alonso M':[3,'#1a0a00',0],'Sanabria':[3,'#1a0a00',0],
+  'Almirón':[3,'#1a0a00',0],'Enciso':[3,'#1a0a00',0],
+  // Ivory Coast
+  'Sangaré F':[5,'#1a0a00',3],'Ballo-Touré':[6,'#1a0a00',3],'Bailly':[5,'#1a0a00',3],
+  'Deli':[5,'#1a0a00',3],'Aurier':[5,'#1a0a00',3],'Sangaré I':[5,'#1a0a00',3],
+  'Koné G':[5,'#1a0a00',2],'Zaha':[5,'#1a0a00',2],'Pepe N':[5,'#1a0a00',2],
+  'Haller':[5,'#1a0a00',3],'Gradel':[5,'#1a0a00',3],
+  // Bosnia-Herzegovina
+  'Kovačević D':[2,'#1a0a00',0],'Kolasinac':[2,'#1a0a00',0],'Šunjić':[2,'#1a0a00',0],
+  'Kovačević S':[2,'#1a0a00',0],'Cipetic':[2,'#1a0a00',0],'Pjanić':[3,'#1a0a00',0],
+  'Hajradinović':[2,'#1a0a00',0],'Krunic':[2,'#1a0a00',0],'Džeko':[2,'#1a0a00',0],
+  'Prevljak':[2,'#1a0a00',0],'Demirović':[2,'#1a0a00',0],
+  // Serbia
+  'Rajković':[2,'#1a0a00',0],'Milenkovic':[2,'#1a0a00',0],'Veljković':[2,'#1a0a00',0],
+  'Pavlović N':[2,'#1a0a00',0],'Živković':[2,'#1a0a00',0],'Lukić S':[2,'#1a0a00',0],
+  'Tadić':[2,'#1a0a00',0],'Ilic S':[2,'#1a0a00',0],'Mitrović':[2,'#1a0a00',3],
+  'Jović L':[2,'#8B4513',0],'Vlahović':[2,'#1a0a00',0],
+  // Panama
+  'Mosquera':[3,'#1a0a00',0],'Murillo':[4,'#1a0a00',0],'Escobar':[3,'#1a0a00',0],
+  'Córdoba E':[4,'#1a0a00',0],'Davis E':[4,'#1a0a00',0],'Godoy':[3,'#1a0a00',0],
+  'Gómez A':[3,'#1a0a00',0],'Fajardo':[3,'#1a0a00',0],'Bárcenas':[4,'#1a0a00',2],
+  'Blackburn':[5,'#1a0a00',2],'Adames':[3,'#1a0a00',0],
+  // New Zealand
+  'Sail':[0,'#8B4513',0],'Cacace':[2,'#1a0a00',0],'Boxall':[0,'#8B4513',0],
+  'Payne':[0,'#c8a26b',0],'Waine':[0,'#8B4513',0],'Garbett':[0,'#8B4513',0],
+  'Rojas J':[3,'#1a0a00',0],'de Jong R':[0,'#c8a26b',0],'Wood C':[0,'#8B4513',0],
+  'Cacace A':[2,'#1a0a00',0],'Bell R':[0,'#8B4513',0],
+  // Saudi Arabia
+  'Al-Owais':[3,'#1a0a00',0],'Al-Ghannam':[3,'#1a0a00',0],'Al-Tambakti':[3,'#1a0a00',0],
+  'Albulayhi':[3,'#1a0a00',0],'Al-Shahrani':[3,'#1a0a00',0],'Al-Malki':[3,'#1a0a00',0],
+  'Kanno':[3,'#1a0a00',0],'Al-Dawsari':[3,'#1a0a00',0],'Al-Shehri':[3,'#1a0a00',0],
+  'Bahebri':[3,'#1a0a00',0],'Al-Buraikan':[3,'#1a0a00',0],
+  // Egypt
+  'El-Shenawy':[3,'#1a0a00',0],'Kahraba':[3,'#1a0a00',0],'Hamdi':[3,'#1a0a00',0],
+  'Abdelmonem':[3,'#1a0a00',0],'El-Wensh':[3,'#1a0a00',0],'Elneny':[3,'#1a0a00',0],
+  'Zizo':[3,'#1a0a00',0],'El-Solia':[3,'#1a0a00',0],'Salah M':[3,'#1a0a00',0],
+  'Trezeguet':[3,'#1a0a00',0],'Marmoush':[3,'#1a0a00',0],
+  // Cape Verde
+  'Vozinha':[4,'#1a0a00',3],'Varela B':[4,'#1a0a00',0],'Roberto Lopes':[4,'#1a0a00',0],
+  'Fali':[5,'#1a0a00',3],'Rui Correia':[4,'#1a0a00',0],'Andrade M':[4,'#1a0a00',0],
+  'Jamiro':[4,'#1a0a00',2],'Garry Rodrigues':[4,'#1a0a00',0],'Dyego Sousa':[4,'#1a0a00',0],
+  'Tavares N':[5,'#1a0a00',2],'Júnior Alves':[5,'#1a0a00',2],
+  // Iraq
+  'Hamid':[3,'#1a0a00',0],'Amjed':[3,'#1a0a00',0],'Jasim':[3,'#1a0a00',0],
+  'Mohammed H':[3,'#1a0a00',0],'Ali Adnan':[3,'#1a0a00',0],'Al-Zubaydi':[3,'#1a0a00',0],
+  'Hasan A':[3,'#1a0a00',0],'Kareem A':[3,'#1a0a00',0],'Mohanad Ali':[3,'#1a0a00',0],
+  'Aymen':[3,'#1a0a00',0],'Hashim':[3,'#1a0a00',0],
+  // Jordan
+  'Shafei':[3,'#1a0a00',0],'Al-Rawabdeh':[3,'#1a0a00',0],'Musa J':[3,'#1a0a00',0],
+  'Sukar':[3,'#1a0a00',0],'Al-Ababneh':[3,'#1a0a00',0],'Mahmoud M':[3,'#1a0a00',0],
+  'Bani Yaseen':[3,'#1a0a00',0],'Al-Naimat':[3,'#1a0a00',0],'Yazan Al-Naimat':[3,'#1a0a00',0],
+  'Bani Attiah':[3,'#1a0a00',0],'Hamdan':[3,'#1a0a00',0],
+  // Uzbekistan
+  'Nortdzhanov':[3,'#1a0a00',0],'Jalolov':[3,'#1a0a00',0],'Ashurmatov':[3,'#1a0a00',0],
+  'Khasanov':[3,'#1a0a00',0],'Alijonov':[3,'#1a0a00',0],'Komilov':[3,'#1a0a00',0],
+  'Masharipov':[3,'#1a0a00',0],'Tursunov':[3,'#1a0a00',0],'Shomurodov':[3,'#1a0a00',0],
+  'Rashidov':[3,'#1a0a00',0],'Jaloliddinov':[3,'#1a0a00',0],
+  // DR Congo
+  'Epassy':[6,'#1a0a00',3],'Nganga':[6,'#1a0a00',3],'Mbemba':[6,'#1a0a00',3],
+  'Boyata':[6,'#1a0a00',3],'Bolasie':[6,'#1a0a00',2],'Tshimanga':[6,'#1a0a00',3],
+  'Lokonga':[6,'#1a0a00',3],'Balele':[6,'#1a0a00',3],'Batshuayi':[6,'#1a0a00',3],
+  'Masuaku':[6,'#1a0a00',3],'Inonga':[6,'#1a0a00',3],
+  // Qatar
+  'Al-Sheeb':[3,'#1a0a00',0],'Pedro Miguel':[3,'#1a0a00',0],'Khoukhi':[3,'#1a0a00',0],
+  'Hassan K':[3,'#1a0a00',0],'Salman':[3,'#1a0a00',0],'Al-Haydos':[3,'#1a0a00',0],
+  'Boudiaf':[3,'#1a0a00',0],'Al-Harami':[3,'#1a0a00',0],'Almoez':[3,'#1a0a00',0],
+  'Afif':[3,'#1a0a00',0],'Al-Rawi':[3,'#1a0a00',0],
+  // South Africa
+  'Williams R':[5,'#1a0a00',3],'Mudau':[5,'#1a0a00',3],'Sesane':[5,'#1a0a00',3],
+  'Daniels':[5,'#1a0a00',3],'De Reuck':[0,'#c8a26b',0],'Mvala':[5,'#1a0a00',3],
+  'Zungu':[5,'#1a0a00',3],'Dolly':[5,'#1a0a00',2],'Mothiba':[5,'#1a0a00',3],
+  'Foster P':[1,'#8B4513',0],'Hlongwane':[5,'#1a0a00',2],
+  // Czechia
+  'Staněk':[0,'#8B4513',0],'Coufal':[0,'#8B4513',0],'Brabec':[0,'#8B4513',0],
+  'Kúdela':[0,'#8B4513',0],'Novák':[0,'#8B4513',0],'Souček':[0,'#8B4513',0],
+  'Barák':[0,'#8B4513',0],'Sadílek':[0,'#8B4513',0],'Kuchta':[0,'#8B4513',0],
+  'Chytil':[0,'#8B4513',0],'Schick':[0,'#8B4513',0],
+  // Curaçao
+  'Van Aanholt':[4,'#1a0a00',0],'Mukansanga':[5,'#1a0a00',3],'Haps':[4,'#1a0a00',0],
+  'Kwidama':[5,'#1a0a00',3],'Emeran':[4,'#1a0a00',2],'Fer':[4,'#1a0a00',0],
+  'Clasie':[0,'#c8a26b',0],'Duk':[5,'#1a0a00',2],'Bonevacia':[4,'#1a0a00',0],
+  'Hasselbaink J':[4,'#1a0a00',0],'Janssen V':[0,'#c8a26b',0],
+  // Haiti
+  'Joseph K':[5,'#1a0a00',3],'Doze':[5,'#1a0a00',3],'Jérôme':[5,'#1a0a00',3],
+  'Beauvue':[5,'#1a0a00',3],'Pierre A':[5,'#1a0a00',3],'Bazile':[5,'#1a0a00',3],
+  'Herold Jr':[5,'#1a0a00',3],'Frantzdy':[5,'#1a0a00',3],'Sadi':[5,'#1a0a00',3],
+  'Pierre J':[5,'#1a0a00',3],'Nazon':[5,'#1a0a00',3],
 };
 function hashStr(s){let h=0x811c9dc5;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,0x01000193)>>>0;}return h;}
 function makeSprite(name,country){
@@ -997,6 +1281,501 @@ const POOL=[
   {id:'us11',n:'Zimmerman',c:'USA',p:'DEF',r:'bronze',f:'🇺🇸'},
   {id:'us12',n:'Musah',c:'USA',p:'MID',r:'silver',f:'🇺🇸'},
   {id:'us13',n:'Ferreira J',c:'USA',p:'FWD',r:'bronze',f:'🇺🇸'},
+
+  {id:'ar13',n:'Pezzella',c:'Argentina',p:'DEF',r:'bronze',f:'🇦🇷'},
+  {id:'ar14',n:'Acuña',c:'Argentina',p:'DEF',r:'silver',f:'🇦🇷'},
+  {id:'ar15',n:'Lo Celso',c:'Argentina',p:'MID',r:'silver',f:'🇦🇷'},
+  {id:'ar16',n:'Almada',c:'Argentina',p:'MID',r:'silver',f:'🇦🇷'},
+  {id:'ar17',n:'Soulé',c:'Argentina',p:'FWD',r:'silver',f:'🇦🇷'},
+  {id:'ar18',n:'Carboni F',c:'Argentina',p:'FWD',r:'bronze',f:'🇦🇷'},
+  {id:'ar19',n:'Otamendi',c:'Argentina',p:'DEF',r:'silver',f:'🇦🇷'},
+  {id:'ar20',n:'Rulli',c:'Argentina',p:'GK',r:'bronze',f:'🇦🇷'},
+  {id:'au12',n:'Irvine',c:'Australia',p:'MID',r:'silver',f:'🇦🇺'},
+  {id:'au13',n:'Hrustic',c:'Australia',p:'MID',r:'bronze',f:'🇦🇺'},
+  {id:'au14',n:'Baccus',c:'Australia',p:'MID',r:'bronze',f:'🇦🇺'},
+  {id:'au15',n:'Maclaren',c:'Australia',p:'FWD',r:'silver',f:'🇦🇺'},
+  {id:'au16',n:'Kuol',c:'Australia',p:'FWD',r:'bronze',f:'🇦🇺'},
+  {id:'au17',n:'Redmayne',c:'Australia',p:'GK',r:'bronze',f:'🇦🇺'},
+  {id:'au18',n:'Degenek',c:'Australia',p:'DEF',r:'bronze',f:'🇦🇺'},
+  {id:'au19',n:'King T',c:'Australia',p:'FWD',r:'bronze',f:'🇦🇺'},
+  {id:'br13',n:'Arana',c:'Brazil',p:'DEF',r:'bronze',f:'🇧🇷'},
+  {id:'br14',n:'Renan Lodi',c:'Brazil',p:'DEF',r:'bronze',f:'🇧🇷'},
+  {id:'br15',n:'Paquetá',c:'Brazil',p:'MID',r:'gold',f:'🇧🇷'},
+  {id:'br16',n:'Andreas Pereira',c:'Brazil',p:'MID',r:'bronze',f:'🇧🇷'},
+  {id:'br17',n:'Savinho',c:'Brazil',p:'FWD',r:'silver',f:'🇧🇷'},
+  {id:'br18',n:'Martinelli G',c:'Brazil',p:'FWD',r:'silver',f:'🇧🇷'},
+  {id:'br19',n:'Estêvão',c:'Brazil',p:'FWD',r:'silver',f:'🇧🇷'},
+  {id:'br20',n:'Caju',c:'Brazil',p:'MID',r:'bronze',f:'🇧🇷'},
+  {id:'ca12',n:'Vitória C',c:'Canada',p:'GK',r:'bronze',f:'🇨🇦'},
+  {id:'ca13',n:'Bombito',c:'Canada',p:'DEF',r:'bronze',f:'🇨🇦'},
+  {id:'ca14',n:'Tabla',c:'Canada',p:'MID',r:'bronze',f:'🇨🇦'},
+  {id:'ca15',n:'Koné L',c:'Canada',p:'MID',r:'silver',f:'🇨🇦'},
+  {id:'ca16',n:'Larin',c:'Canada',p:'FWD',r:'silver',f:'🇨🇦'},
+  {id:'ca17',n:'Hoilett',c:'Canada',p:'FWD',r:'bronze',f:'🇨🇦'},
+  {id:'ca18',n:'Cavallini',c:'Canada',p:'FWD',r:'bronze',f:'🇨🇦'},
+  {id:'ca19',n:'Piette',c:'Canada',p:'MID',r:'bronze',f:'🇨🇦'},
+  {id:'en12',n:'Walker',c:'England',p:'DEF',r:'silver',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+  {id:'en13',n:'Guehi',c:'England',p:'DEF',r:'silver',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+  {id:'en14',n:'Gordon A',c:'England',p:'FWD',r:'silver',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+  {id:'en15',n:'Palmer C',c:'England',p:'MID',r:'gold',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+  {id:'en16',n:'Gallagher C',c:'England',p:'MID',r:'silver',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+  {id:'en17',n:'Rashford',c:'England',p:'FWD',r:'silver',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+  {id:'en18',n:'Mainoo',c:'England',p:'MID',r:'silver',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+  {id:'en19',n:'James R',c:'England',p:'DEF',r:'silver',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+  {id:'fr13',n:'Konaté I',c:'France',p:'DEF',r:'silver',f:'🇫🇷'},
+  {id:'fr14',n:'Hernandez L',c:'France',p:'DEF',r:'silver',f:'🇫🇷'},
+  {id:'fr15',n:'Rabiot',c:'France',p:'MID',r:'silver',f:'🇫🇷'},
+  {id:'fr16',n:'Fofana Y',c:'France',p:'MID',r:'silver',f:'🇫🇷'},
+  {id:'fr17',n:'Coman K',c:'France',p:'FWD',r:'silver',f:'🇫🇷'},
+  {id:'fr18',n:'Saliba',c:'France',p:'DEF',r:'silver',f:'🇫🇷'},
+  {id:'fr19',n:'Diaby L',c:'France',p:'FWD',r:'bronze',f:'🇫🇷'},
+  {id:'fr20',n:'Guendouzi',c:'France',p:'MID',r:'bronze',f:'🇫🇷'},
+  {id:'de12',n:'Raum',c:'Germany',p:'DEF',r:'silver',f:'🇩🇪'},
+  {id:'de13',n:'Mittelstädt',c:'Germany',p:'DEF',r:'bronze',f:'🇩🇪'},
+  {id:'de14',n:'Groß',c:'Germany',p:'MID',r:'silver',f:'🇩🇪'},
+  {id:'de15',n:'Andrich',c:'Germany',p:'MID',r:'bronze',f:'🇩🇪'},
+  {id:'de16',n:'Brandt',c:'Germany',p:'MID',r:'silver',f:'🇩🇪'},
+  {id:'de17',n:'Beier',c:'Germany',p:'FWD',r:'silver',f:'🇩🇪'},
+  {id:'de18',n:'Ter Stegen',c:'Germany',p:'GK',r:'silver',f:'🇩🇪'},
+  {id:'de19',n:'Anton',c:'Germany',p:'DEF',r:'bronze',f:'🇩🇪'},
+  {id:'jp12',n:'Nagatomo',c:'Japan',p:'DEF',r:'bronze',f:'🇯🇵'},
+  {id:'jp13',n:'Yoshida',c:'Japan',p:'DEF',r:'bronze',f:'🇯🇵'},
+  {id:'jp14',n:'Kamada',c:'Japan',p:'MID',r:'silver',f:'🇯🇵'},
+  {id:'jp15',n:'Doan',c:'Japan',p:'MID',r:'silver',f:'🇯🇵'},
+  {id:'jp16',n:'Nakayama',c:'Japan',p:'DEF',r:'bronze',f:'🇯🇵'},
+  {id:'jp17',n:'Maeda D',c:'Japan',p:'FWD',r:'silver',f:'🇯🇵'},
+  {id:'jp18',n:'Suzuki A',c:'Japan',p:'GK',r:'bronze',f:'🇯🇵'},
+  {id:'jp19',n:'Sakai H',c:'Japan',p:'DEF',r:'bronze',f:'🇯🇵'},
+  {id:'mx12',n:'Mier',c:'Mexico',p:'GK',r:'silver',f:'🇲🇽'},
+  {id:'mx13',n:'Araujo',c:'Mexico',p:'DEF',r:'bronze',f:'🇲🇽'},
+  {id:'mx14',n:'Romo',c:'Mexico',p:'MID',r:'bronze',f:'🇲🇽'},
+  {id:'mx15',n:'Antuna',c:'Mexico',p:'FWD',r:'silver',f:'🇲🇽'},
+  {id:'mx16',n:'Vega H',c:'Mexico',p:'FWD',r:'silver',f:'🇲🇽'},
+  {id:'mx17',n:'Alvarado R',c:'Mexico',p:'MID',r:'bronze',f:'🇲🇽'},
+  {id:'mx18',n:'Rodríguez C',c:'Mexico',p:'MID',r:'silver',f:'🇲🇽'},
+  {id:'mx19',n:'González H',c:'Mexico',p:'DEF',r:'bronze',f:'🇲🇽'},
+  {id:'ma13',n:'Attiat-Allah',c:'Morocco',p:'DEF',r:'bronze',f:'🇲🇦'},
+  {id:'ma14',n:'Dari',c:'Morocco',p:'DEF',r:'bronze',f:'🇲🇦'},
+  {id:'ma15',n:'Ezzalzouli',c:'Morocco',p:'FWD',r:'silver',f:'🇲🇦'},
+  {id:'ma16',n:'El Kaabi',c:'Morocco',p:'FWD',r:'gold',f:'🇲🇦'},
+  {id:'ma17',n:'Rahimi',c:'Morocco',p:'FWD',r:'silver',f:'🇲🇦'},
+  {id:'ma18',n:'Louza',c:'Morocco',p:'MID',r:'bronze',f:'🇲🇦'},
+  {id:'ma19',n:'Benoun',c:'Morocco',p:'DEF',r:'bronze',f:'🇲🇦'},
+  {id:'ma20',n:'Bounou',c:'Morocco',p:'GK',r:'silver',f:'🇲🇦'},
+  {id:'nl12',n:'Blind',c:'Netherlands',p:'DEF',r:'bronze',f:'🇳🇱'},
+  {id:'nl13',n:'Aké',c:'Netherlands',p:'DEF',r:'silver',f:'🇳🇱'},
+  {id:'nl14',n:'Simons X',c:'Netherlands',p:'MID',r:'gold',f:'🇳🇱'},
+  {id:'nl15',n:'Koopmeiners',c:'Netherlands',p:'MID',r:'gold',f:'🇳🇱'},
+  {id:'nl16',n:'Bergwijn',c:'Netherlands',p:'FWD',r:'silver',f:'🇳🇱'},
+  {id:'nl17',n:'Zirkzee',c:'Netherlands',p:'FWD',r:'silver',f:'🇳🇱'},
+  {id:'nl18',n:'Bijlow',c:'Netherlands',p:'GK',r:'bronze',f:'🇳🇱'},
+  {id:'nl19',n:'Frimpong',c:'Netherlands',p:'DEF',r:'silver',f:'🇳🇱'},
+  {id:'pt12',n:'Vitinha',c:'Portugal',p:'MID',r:'gold',f:'🇵🇹'},
+  {id:'pt13',n:'Palhinha',c:'Portugal',p:'MID',r:'silver',f:'🇵🇹'},
+  {id:'pt14',n:'Pedro Neto',c:'Portugal',p:'FWD',r:'silver',f:'🇵🇹'},
+  {id:'pt15',n:'Gonçalo Ramos',c:'Portugal',p:'FWD',r:'silver',f:'🇵🇹'},
+  {id:'pt16',n:'Trincão',c:'Portugal',p:'FWD',r:'bronze',f:'🇵🇹'},
+  {id:'pt17',n:'Bento',c:'Portugal',p:'GK',r:'silver',f:'🇵🇹'},
+  {id:'pt18',n:'Mendes N',c:'Portugal',p:'DEF',r:'gold',f:'🇵🇹'},
+  {id:'pt19',n:'Guerreiro',c:'Portugal',p:'DEF',r:'silver',f:'🇵🇹'},
+  {id:'sn12',n:'Sané A',c:'Senegal',p:'GK',r:'bronze',f:'🇸🇳'},
+  {id:'sn13',n:'Kouyaté C',c:'Senegal',p:'MID',r:'silver',f:'🇸🇳'},
+  {id:'sn14',n:'Sarr I',c:'Senegal',p:'FWD',r:'gold',f:'🇸🇳'},
+  {id:'sn15',n:'Dia B',c:'Senegal',p:'FWD',r:'silver',f:'🇸🇳'},
+  {id:'sn16',n:'Ndiaye I',c:'Senegal',p:'MID',r:'silver',f:'🇸🇳'},
+  {id:'sn17',n:'Mbaye A',c:'Senegal',p:'DEF',r:'bronze',f:'🇸🇳'},
+  {id:'sn18',n:'Badji',c:'Senegal',p:'FWD',r:'bronze',f:'🇸🇳'},
+  {id:'sn19',n:'Mendy F',c:'Senegal',p:'MID',r:'bronze',f:'🇸🇳'},
+  {id:'es13',n:'Zubimendi',c:'Spain',p:'MID',r:'silver',f:'🇪🇸'},
+  {id:'es14',n:'Grimaldo',c:'Spain',p:'DEF',r:'silver',f:'🇪🇸'},
+  {id:'es15',n:'Oyarzabal',c:'Spain',p:'FWD',r:'silver',f:'🇪🇸'},
+  {id:'es16',n:'Ferran Torres',c:'Spain',p:'FWD',r:'silver',f:'🇪🇸'},
+  {id:'es17',n:'Joselu',c:'Spain',p:'FWD',r:'bronze',f:'🇪🇸'},
+  {id:'es18',n:'Fabián Ruiz',c:'Spain',p:'MID',r:'silver',f:'🇪🇸'},
+  {id:'es19',n:'Aleix García',c:'Spain',p:'MID',r:'bronze',f:'🇪🇸'},
+  {id:'es20',n:'Vivian',c:'Spain',p:'DEF',r:'bronze',f:'🇪🇸'},
+  {id:'us14',n:'Acosta',c:'USA',p:'MID',r:'silver',f:'🇺🇸'},
+  {id:'us15',n:'Aaronson',c:'USA',p:'MID',r:'silver',f:'🇺🇸'},
+  {id:'us16',n:'Pepi',c:'USA',p:'FWD',r:'silver',f:'🇺🇸'},
+  {id:'us17',n:'Mihailovic',c:'USA',p:'MID',r:'bronze',f:'🇺🇸'},
+  {id:'us18',n:'Sargent',c:'USA',p:'FWD',r:'silver',f:'🇺🇸'},
+  {id:'us19',n:'Trusty',c:'USA',p:'DEF',r:'bronze',f:'🇺🇸'},
+  {id:'us20',n:'Horvath',c:'USA',p:'GK',r:'bronze',f:'🇺🇸'},
+  {id:'us21',n:'Lletget',c:'USA',p:'MID',r:'bronze',f:'🇺🇸'},
+  {id:'be1',n:'Casteels',c:'Belgium',p:'GK',r:'silver',f:'🇧🇪'},
+  {id:'be2',n:'Castagne',c:'Belgium',p:'DEF',r:'silver',f:'🇧🇪'},
+  {id:'be3',n:'Faes',c:'Belgium',p:'DEF',r:'silver',f:'🇧🇪'},
+  {id:'be4',n:'Vertonghen',c:'Belgium',p:'DEF',r:'bronze',f:'🇧🇪'},
+  {id:'be5',n:'Theate',c:'Belgium',p:'DEF',r:'bronze',f:'🇧🇪'},
+  {id:'be6',n:'De Bruyne',c:'Belgium',p:'MID',r:'gold',f:'🇧🇪'},
+  {id:'be7',n:'Tielemans',c:'Belgium',p:'MID',r:'gold',f:'🇧🇪'},
+  {id:'be8',n:'Onana A',c:'Belgium',p:'MID',r:'silver',f:'🇧🇪'},
+  {id:'be9',n:'Lukaku',c:'Belgium',p:'FWD',r:'gold',f:'🇧🇪'},
+  {id:'be10',n:'De Ketelaere',c:'Belgium',p:'FWD',r:'silver',f:'🇧🇪'},
+  {id:'be11',n:'Openda',c:'Belgium',p:'FWD',r:'silver',f:'🇧🇪'},
+  {id:'hr1',n:'Livaković',c:'Croatia',p:'GK',r:'silver',f:'🇭🇷'},
+  {id:'hr2',n:'Juranović',c:'Croatia',p:'DEF',r:'silver',f:'🇭🇷'},
+  {id:'hr3',n:'Gvardiol',c:'Croatia',p:'DEF',r:'gold',f:'🇭🇷'},
+  {id:'hr4',n:'Erlic',c:'Croatia',p:'DEF',r:'bronze',f:'🇭🇷'},
+  {id:'hr5',n:'Sosa B',c:'Croatia',p:'DEF',r:'bronze',f:'🇭🇷'},
+  {id:'hr6',n:'Modrić',c:'Croatia',p:'MID',r:'gold',f:'🇭🇷'},
+  {id:'hr7',n:'Kovačić',c:'Croatia',p:'MID',r:'gold',f:'🇭🇷'},
+  {id:'hr8',n:'Brozović',c:'Croatia',p:'MID',r:'silver',f:'🇭🇷'},
+  {id:'hr9',n:'Kramarić',c:'Croatia',p:'FWD',r:'silver',f:'🇭🇷'},
+  {id:'hr10',n:'Pašalić',c:'Croatia',p:'MID',r:'silver',f:'🇭🇷'},
+  {id:'hr11',n:'Budimir',c:'Croatia',p:'FWD',r:'bronze',f:'🇭🇷'},
+  {id:'no1',n:'Nyland',c:'Norway',p:'GK',r:'bronze',f:'🇳🇴'},
+  {id:'no2',n:'Ryerson',c:'Norway',p:'DEF',r:'bronze',f:'🇳🇴'},
+  {id:'no3',n:'Ajer',c:'Norway',p:'DEF',r:'silver',f:'🇳🇴'},
+  {id:'no4',n:'Hanche-Olsen',c:'Norway',p:'DEF',r:'bronze',f:'🇳🇴'},
+  {id:'no5',n:'Pedersen M',c:'Norway',p:'DEF',r:'silver',f:'🇳🇴'},
+  {id:'no6',n:'Berge S',c:'Norway',p:'MID',r:'silver',f:'🇳🇴'},
+  {id:'no7',n:'Ødegaard',c:'Norway',p:'MID',r:'gold',f:'🇳🇴'},
+  {id:'no8',n:'Thorsby',c:'Norway',p:'MID',r:'bronze',f:'🇳🇴'},
+  {id:'no9',n:'Haaland',c:'Norway',p:'FWD',r:'gold',f:'🇳🇴'},
+  {id:'no10',n:'Sørloth',c:'Norway',p:'FWD',r:'silver',f:'🇳🇴'},
+  {id:'no11',n:'Hauge',c:'Norway',p:'FWD',r:'bronze',f:'🇳🇴'},
+  {id:'uy1',n:'Rochet',c:'Uruguay',p:'GK',r:'silver',f:'🇺🇾'},
+  {id:'uy2',n:'Nández',c:'Uruguay',p:'DEF',r:'silver',f:'🇺🇾'},
+  {id:'uy3',n:'Giménez J',c:'Uruguay',p:'DEF',r:'gold',f:'🇺🇾'},
+  {id:'uy4',n:'Godín',c:'Uruguay',p:'DEF',r:'bronze',f:'🇺🇾'},
+  {id:'uy5',n:'Olivera',c:'Uruguay',p:'DEF',r:'silver',f:'🇺🇾'},
+  {id:'uy6',n:'Valverde',c:'Uruguay',p:'MID',r:'gold',f:'🇺🇾'},
+  {id:'uy7',n:'Bentancur',c:'Uruguay',p:'MID',r:'silver',f:'🇺🇾'},
+  {id:'uy8',n:'De Arrascaeta',c:'Uruguay',p:'MID',r:'silver',f:'🇺🇾'},
+  {id:'uy9',n:'Núñez D',c:'Uruguay',p:'FWD',r:'gold',f:'🇺🇾'},
+  {id:'uy10',n:'Suárez',c:'Uruguay',p:'FWD',r:'silver',f:'🇺🇾'},
+  {id:'uy11',n:'Cavani',c:'Uruguay',p:'FWD',r:'bronze',f:'🇺🇾'},
+  {id:'co1',n:'Vargas C',c:'Colombia',p:'GK',r:'silver',f:'🇨🇴'},
+  {id:'co2',n:'Muñoz',c:'Colombia',p:'DEF',r:'silver',f:'🇨🇴'},
+  {id:'co3',n:'Sánchez D',c:'Colombia',p:'DEF',r:'silver',f:'🇨🇴'},
+  {id:'co4',n:'Lucumí',c:'Colombia',p:'DEF',r:'silver',f:'🇨🇴'},
+  {id:'co5',n:'Mojica',c:'Colombia',p:'DEF',r:'bronze',f:'🇨🇴'},
+  {id:'co6',n:'Lerma',c:'Colombia',p:'MID',r:'silver',f:'🇨🇴'},
+  {id:'co7',n:'Pérez R',c:'Colombia',p:'MID',r:'silver',f:'🇨🇴'},
+  {id:'co8',n:'James',c:'Colombia',p:'MID',r:'gold',f:'🇨🇴'},
+  {id:'co9',n:'Díaz L',c:'Colombia',p:'FWD',r:'gold',f:'🇨🇴'},
+  {id:'co10',n:'Córdoba C',c:'Colombia',p:'FWD',r:'silver',f:'🇨🇴'},
+  {id:'co11',n:'Borja',c:'Colombia',p:'FWD',r:'bronze',f:'🇨🇴'},
+  {id:'sc1',n:'Gordon A',c:'Scotland',p:'GK',r:'silver',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+  {id:'sc2',n:'Ralston',c:'Scotland',p:'DEF',r:'bronze',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+  {id:'sc3',n:'Hendry',c:'Scotland',p:'DEF',r:'silver',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+  {id:'sc4',n:'Hanley',c:'Scotland',p:'DEF',r:'bronze',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+  {id:'sc5',n:'Robertson',c:'Scotland',p:'DEF',r:'gold',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+  {id:'sc6',n:'McTominay',c:'Scotland',p:'MID',r:'gold',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+  {id:'sc7',n:'McGinn',c:'Scotland',p:'MID',r:'silver',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+  {id:'sc8',n:'Christie',c:'Scotland',p:'MID',r:'bronze',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+  {id:'sc9',n:'Adams C',c:'Scotland',p:'FWD',r:'silver',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+  {id:'sc10',n:'Dykes',c:'Scotland',p:'FWD',r:'bronze',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+  {id:'sc11',n:'Shankland',c:'Scotland',p:'FWD',r:'bronze',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+  {id:'ch1',n:'Sommer',c:'Switzerland',p:'GK',r:'silver',f:'🇨🇭'},
+  {id:'ch2',n:'Widmer',c:'Switzerland',p:'DEF',r:'silver',f:'🇨🇭'},
+  {id:'ch3',n:'Akanji',c:'Switzerland',p:'DEF',r:'gold',f:'🇨🇭'},
+  {id:'ch4',n:'Elvedi',c:'Switzerland',p:'DEF',r:'silver',f:'🇨🇭'},
+  {id:'ch5',n:'Rodriguez R',c:'Switzerland',p:'DEF',r:'silver',f:'🇨🇭'},
+  {id:'ch6',n:'Freuler',c:'Switzerland',p:'MID',r:'silver',f:'🇨🇭'},
+  {id:'ch7',n:'Xhaka',c:'Switzerland',p:'MID',r:'gold',f:'🇨🇭'},
+  {id:'ch8',n:'Embolo',c:'Switzerland',p:'FWD',r:'silver',f:'🇨🇭'},
+  {id:'ch9',n:'Seferović',c:'Switzerland',p:'FWD',r:'bronze',f:'🇨🇭'},
+  {id:'ch10',n:'Vargas R',c:'Switzerland',p:'FWD',r:'silver',f:'🇨🇭'},
+  {id:'ch11',n:'Ndoye',c:'Switzerland',p:'FWD',r:'silver',f:'🇨🇭'},
+  {id:'se1',n:'Olsen R',c:'Sweden',p:'GK',r:'silver',f:'🇸🇪'},
+  {id:'se2',n:'Krafth',c:'Sweden',p:'DEF',r:'bronze',f:'🇸🇪'},
+  {id:'se3',n:'Lindelöf',c:'Sweden',p:'DEF',r:'silver',f:'🇸🇪'},
+  {id:'se4',n:'Danielson',c:'Sweden',p:'DEF',r:'bronze',f:'🇸🇪'},
+  {id:'se5',n:'Augustinsson',c:'Sweden',p:'DEF',r:'silver',f:'🇸🇪'},
+  {id:'se6',n:'Ekdal',c:'Sweden',p:'MID',r:'bronze',f:'🇸🇪'},
+  {id:'se7',n:'Kulusevski',c:'Sweden',p:'MID',r:'gold',f:'🇸🇪'},
+  {id:'se8',n:'Forsberg',c:'Sweden',p:'MID',r:'silver',f:'🇸🇪'},
+  {id:'se9',n:'Gyökeres',c:'Sweden',p:'FWD',r:'gold',f:'🇸🇪'},
+  {id:'se10',n:'Isak',c:'Sweden',p:'FWD',r:'gold',f:'🇸🇪'},
+  {id:'se11',n:'Elanga',c:'Sweden',p:'FWD',r:'silver',f:'🇸🇪'},
+  {id:'at1',n:'Pentz',c:'Austria',p:'GK',r:'bronze',f:'🇦🇹'},
+  {id:'at2',n:'Lainer',c:'Austria',p:'DEF',r:'bronze',f:'🇦🇹'},
+  {id:'at3',n:'Posch',c:'Austria',p:'DEF',r:'silver',f:'🇦🇹'},
+  {id:'at4',n:'Wöber',c:'Austria',p:'DEF',r:'silver',f:'🇦🇹'},
+  {id:'at5',n:'Hinteregger',c:'Austria',p:'DEF',r:'bronze',f:'🇦🇹'},
+  {id:'at6',n:'Laimer',c:'Austria',p:'MID',r:'silver',f:'🇦🇹'},
+  {id:'at7',n:'Grillitsch',c:'Austria',p:'MID',r:'bronze',f:'🇦🇹'},
+  {id:'at8',n:'Sabitzer',c:'Austria',p:'MID',r:'gold',f:'🇦🇹'},
+  {id:'at9',n:'Gregoritsch',c:'Austria',p:'FWD',r:'bronze',f:'🇦🇹'},
+  {id:'at10',n:'Arnautović',c:'Austria',p:'FWD',r:'silver',f:'🇦🇹'},
+  {id:'at11',n:'Seiwald',c:'Austria',p:'MID',r:'silver',f:'🇦🇹'},
+  {id:'kr1',n:'Kim Seung-Gyu',c:'South Korea',p:'GK',r:'silver',f:'🇰🇷'},
+  {id:'kr2',n:'Kim Moon-Hwan',c:'South Korea',p:'DEF',r:'bronze',f:'🇰🇷'},
+  {id:'kr3',n:'Kim Min-Jae',c:'South Korea',p:'DEF',r:'gold',f:'🇰🇷'},
+  {id:'kr4',n:'Jung Seung-Hyun',c:'South Korea',p:'DEF',r:'bronze',f:'🇰🇷'},
+  {id:'kr5',n:'Kim Jin-Su',c:'South Korea',p:'DEF',r:'bronze',f:'🇰🇷'},
+  {id:'kr6',n:'Jung Woo-Young',c:'South Korea',p:'MID',r:'bronze',f:'🇰🇷'},
+  {id:'kr7',n:'Lee Jae-Sung',c:'South Korea',p:'MID',r:'silver',f:'🇰🇷'},
+  {id:'kr8',n:'Hwang In-Beom',c:'South Korea',p:'MID',r:'silver',f:'🇰🇷'},
+  {id:'kr9',n:'Son',c:'South Korea',p:'FWD',r:'gold',f:'🇰🇷'},
+  {id:'kr10',n:'Hwang Hee-Chan',c:'South Korea',p:'FWD',r:'silver',f:'🇰🇷'},
+  {id:'kr11',n:'Cho Gue-Sung',c:'South Korea',p:'FWD',r:'silver',f:'🇰🇷'},
+  {id:'ec1',n:'Galíndez',c:'Ecuador',p:'GK',r:'silver',f:'🇪🇨'},
+  {id:'ec2',n:'Preciado',c:'Ecuador',p:'DEF',r:'silver',f:'🇪🇨'},
+  {id:'ec3',n:'Torres A',c:'Ecuador',p:'DEF',r:'silver',f:'🇪🇨'},
+  {id:'ec4',n:'Hincapié',c:'Ecuador',p:'DEF',r:'silver',f:'🇪🇨'},
+  {id:'ec5',n:'Estupiñán',c:'Ecuador',p:'DEF',r:'silver',f:'🇪🇨'},
+  {id:'ec6',n:'Caicedo M',c:'Ecuador',p:'MID',r:'gold',f:'🇪🇨'},
+  {id:'ec7',n:'Méndez C',c:'Ecuador',p:'MID',r:'silver',f:'🇪🇨'},
+  {id:'ec8',n:'Gruezo',c:'Ecuador',p:'MID',r:'bronze',f:'🇪🇨'},
+  {id:'ec9',n:'Valencia E',c:'Ecuador',p:'FWD',r:'gold',f:'🇪🇨'},
+  {id:'ec10',n:'Plata',c:'Ecuador',p:'FWD',r:'silver',f:'🇪🇨'},
+  {id:'ec11',n:'Sarmiento',c:'Ecuador',p:'FWD',r:'bronze',f:'🇪🇨'},
+  {id:'tn1',n:'Dahmen',c:'Tunisia',p:'GK',r:'silver',f:'🇹🇳'},
+  {id:'tn2',n:'Talbi',c:'Tunisia',p:'DEF',r:'silver',f:'🇹🇳'},
+  {id:'tn3',n:'Meriah',c:'Tunisia',p:'DEF',r:'bronze',f:'🇹🇳'},
+  {id:'tn4',n:'Bronn',c:'Tunisia',p:'DEF',r:'silver',f:'🇹🇳'},
+  {id:'tn5',n:'Abdi',c:'Tunisia',p:'DEF',r:'bronze',f:'🇹🇳'},
+  {id:'tn6',n:'Laidouni',c:'Tunisia',p:'MID',r:'silver',f:'🇹🇳'},
+  {id:'tn7',n:'Skhiri',c:'Tunisia',p:'MID',r:'silver',f:'🇹🇳'},
+  {id:'tn8',n:'Ben Romdhane',c:'Tunisia',p:'MID',r:'bronze',f:'🇹🇳'},
+  {id:'tn9',n:'Msakni',c:'Tunisia',p:'FWD',r:'silver',f:'🇹🇳'},
+  {id:'tn10',n:'Khazri',c:'Tunisia',p:'FWD',r:'silver',f:'🇹🇳'},
+  {id:'tn11',n:'Jebali',c:'Tunisia',p:'FWD',r:'bronze',f:'🇹🇳'},
+  {id:'gh1',n:'Ati-Zigi',c:'Ghana',p:'GK',r:'silver',f:'🇬🇭'},
+  {id:'gh2',n:'Lamptey',c:'Ghana',p:'DEF',r:'silver',f:'🇬🇭'},
+  {id:'gh3',n:'Amartey',c:'Ghana',p:'DEF',r:'silver',f:'🇬🇭'},
+  {id:'gh4',n:'Mensah J',c:'Ghana',p:'DEF',r:'silver',f:'🇬🇭'},
+  {id:'gh5',n:'Baba R',c:'Ghana',p:'DEF',r:'bronze',f:'🇬🇭'},
+  {id:'gh6',n:'Partey',c:'Ghana',p:'MID',r:'gold',f:'🇬🇭'},
+  {id:'gh7',n:'Salis',c:'Ghana',p:'MID',r:'silver',f:'🇬🇭'},
+  {id:'gh8',n:'Kudus',c:'Ghana',p:'MID',r:'gold',f:'🇬🇭'},
+  {id:'gh9',n:'Williams I',c:'Ghana',p:'FWD',r:'silver',f:'🇬🇭'},
+  {id:'gh10',n:'Fatawu',c:'Ghana',p:'FWD',r:'silver',f:'🇬🇭'},
+  {id:'gh11',n:'Sulemana',c:'Ghana',p:'FWD',r:'silver',f:'🇬🇭'},
+  {id:'tr1',n:'Günok',c:'Turkey',p:'GK',r:'silver',f:'🇹🇷'},
+  {id:'tr2',n:'Müldür',c:'Turkey',p:'DEF',r:'silver',f:'🇹🇷'},
+  {id:'tr3',n:'Demiral',c:'Turkey',p:'DEF',r:'silver',f:'🇹🇷'},
+  {id:'tr4',n:'Bardakçı',c:'Turkey',p:'DEF',r:'silver',f:'🇹🇷'},
+  {id:'tr5',n:'Kadioglu',c:'Turkey',p:'DEF',r:'silver',f:'🇹🇷'},
+  {id:'tr6',n:'Özcan D',c:'Turkey',p:'MID',r:'silver',f:'🇹🇷'},
+  {id:'tr7',n:'Yazıcı',c:'Turkey',p:'MID',r:'silver',f:'🇹🇷'},
+  {id:'tr8',n:'Aktürkoğlu',c:'Turkey',p:'FWD',r:'silver',f:'🇹🇷'},
+  {id:'tr9',n:'Yıldız K',c:'Turkey',p:'FWD',r:'gold',f:'🇹🇷'},
+  {id:'tr10',n:'Güler',c:'Turkey',p:'FWD',r:'gold',f:'🇹🇷'},
+  {id:'tr11',n:'Calhanoglu',c:'Turkey',p:'MID',r:'gold',f:'🇹🇷'},
+  {id:'dz1',n:'Mandrea',c:'Algeria',p:'GK',r:'bronze',f:'🇩🇿'},
+  {id:'dz2',n:'Atal',c:'Algeria',p:'DEF',r:'silver',f:'🇩🇿'},
+  {id:'dz3',n:'Mandi',c:'Algeria',p:'DEF',r:'silver',f:'🇩🇿'},
+  {id:'dz4',n:'Tahrat',c:'Algeria',p:'DEF',r:'bronze',f:'🇩🇿'},
+  {id:'dz5',n:'Bensebaini',c:'Algeria',p:'DEF',r:'silver',f:'🇩🇿'},
+  {id:'dz6',n:'Bennacer',c:'Algeria',p:'MID',r:'gold',f:'🇩🇿'},
+  {id:'dz7',n:'Aouar',c:'Algeria',p:'MID',r:'silver',f:'🇩🇿'},
+  {id:'dz8',n:'Zerrouki',c:'Algeria',p:'MID',r:'bronze',f:'🇩🇿'},
+  {id:'dz9',n:'Mahrez',c:'Algeria',p:'FWD',r:'gold',f:'🇩🇿'},
+  {id:'dz10',n:'Bounedjah',c:'Algeria',p:'FWD',r:'silver',f:'🇩🇿'},
+  {id:'dz11',n:'Dia B2',c:'Algeria',p:'FWD',r:'silver',f:'🇩🇿'},
+  {id:'ir1',n:'Beiranvand',c:'Iran',p:'GK',r:'silver',f:'🇮🇷'},
+  {id:'ir2',n:'Rezaeian',c:'Iran',p:'DEF',r:'bronze',f:'🇮🇷'},
+  {id:'ir3',n:'Hosseini',c:'Iran',p:'DEF',r:'bronze',f:'🇮🇷'},
+  {id:'ir4',n:'Kanaanizadegan',c:'Iran',p:'DEF',r:'bronze',f:'🇮🇷'},
+  {id:'ir5',n:'Mohammadi',c:'Iran',p:'DEF',r:'bronze',f:'🇮🇷'},
+  {id:'ir6',n:'Ezatolahi',c:'Iran',p:'MID',r:'silver',f:'🇮🇷'},
+  {id:'ir7',n:'Noorollahi',c:'Iran',p:'MID',r:'bronze',f:'🇮🇷'},
+  {id:'ir8',n:'Karimi A',c:'Iran',p:'MID',r:'bronze',f:'🇮🇷'},
+  {id:'ir9',n:'Taremi',c:'Iran',p:'FWD',r:'gold',f:'🇮🇷'},
+  {id:'ir10',n:'Ansarifard',c:'Iran',p:'FWD',r:'bronze',f:'🇮🇷'},
+  {id:'ir11',n:'Ghoddos',c:'Iran',p:'FWD',r:'silver',f:'🇮🇷'},
+  {id:'py1',n:'Silva A',c:'Paraguay',p:'GK',r:'silver',f:'🇵🇾'},
+  {id:'py2',n:'Alderete',c:'Paraguay',p:'DEF',r:'silver',f:'🇵🇾'},
+  {id:'py3',n:'Balbuena',c:'Paraguay',p:'DEF',r:'silver',f:'🇵🇾'},
+  {id:'py4',n:'Alonso G',c:'Paraguay',p:'DEF',r:'bronze',f:'🇵🇾'},
+  {id:'py5',n:'Rojas F',c:'Paraguay',p:'DEF',r:'bronze',f:'🇵🇾'},
+  {id:'py6',n:'Cubas',c:'Paraguay',p:'MID',r:'silver',f:'🇵🇾'},
+  {id:'py7',n:'Gómez M',c:'Paraguay',p:'MID',r:'silver',f:'🇵🇾'},
+  {id:'py8',n:'Alonso M',c:'Paraguay',p:'MID',r:'bronze',f:'🇵🇾'},
+  {id:'py9',n:'Sanabria',c:'Paraguay',p:'FWD',r:'silver',f:'🇵🇾'},
+  {id:'py10',n:'Almirón',c:'Paraguay',p:'FWD',r:'gold',f:'🇵🇾'},
+  {id:'py11',n:'Enciso',c:'Paraguay',p:'FWD',r:'silver',f:'🇵🇾'},
+  {id:'ci1',n:'Sangaré F',c:'Ivory Coast',p:'GK',r:'bronze',f:'🇨🇮'},
+  {id:'ci2',n:'Ballo-Touré',c:'Ivory Coast',p:'DEF',r:'silver',f:'🇨🇮'},
+  {id:'ci3',n:'Bailly',c:'Ivory Coast',p:'DEF',r:'silver',f:'🇨🇮'},
+  {id:'ci4',n:'Deli',c:'Ivory Coast',p:'DEF',r:'bronze',f:'🇨🇮'},
+  {id:'ci5',n:'Aurier',c:'Ivory Coast',p:'DEF',r:'silver',f:'🇨🇮'},
+  {id:'ci6',n:'Sangaré I',c:'Ivory Coast',p:'MID',r:'silver',f:'🇨🇮'},
+  {id:'ci7',n:'Koné G',c:'Ivory Coast',p:'MID',r:'silver',f:'🇨🇮'},
+  {id:'ci8',n:'Zaha',c:'Ivory Coast',p:'FWD',r:'gold',f:'🇨🇮'},
+  {id:'ci9',n:'Pepe N',c:'Ivory Coast',p:'FWD',r:'gold',f:'🇨🇮'},
+  {id:'ci10',n:'Haller',c:'Ivory Coast',p:'FWD',r:'silver',f:'🇨🇮'},
+  {id:'ci11',n:'Gradel',c:'Ivory Coast',p:'FWD',r:'bronze',f:'🇨🇮'},
+  {id:'ba1',n:'Kovačević D',c:'Bosnia-Herzegovina',p:'GK',r:'bronze',f:'🇧🇦'},
+  {id:'ba2',n:'Kolasinac',c:'Bosnia-Herzegovina',p:'DEF',r:'silver',f:'🇧🇦'},
+  {id:'ba3',n:'Šunjić',c:'Bosnia-Herzegovina',p:'DEF',r:'bronze',f:'🇧🇦'},
+  {id:'ba4',n:'Kovačević S',c:'Bosnia-Herzegovina',p:'DEF',r:'bronze',f:'🇧🇦'},
+  {id:'ba5',n:'Cipetic',c:'Bosnia-Herzegovina',p:'DEF',r:'bronze',f:'🇧🇦'},
+  {id:'ba6',n:'Pjanić',c:'Bosnia-Herzegovina',p:'MID',r:'gold',f:'🇧🇦'},
+  {id:'ba7',n:'Hajradinović',c:'Bosnia-Herzegovina',p:'MID',r:'bronze',f:'🇧🇦'},
+  {id:'ba8',n:'Krunic',c:'Bosnia-Herzegovina',p:'MID',r:'silver',f:'🇧🇦'},
+  {id:'ba9',n:'Džeko',c:'Bosnia-Herzegovina',p:'FWD',r:'gold',f:'🇧🇦'},
+  {id:'ba10',n:'Prevljak',c:'Bosnia-Herzegovina',p:'FWD',r:'silver',f:'🇧🇦'},
+  {id:'ba11',n:'Demirović',c:'Bosnia-Herzegovina',p:'FWD',r:'silver',f:'🇧🇦'},
+  {id:'rs1',n:'Rajković',c:'Serbia',p:'GK',r:'silver',f:'🇷🇸'},
+  {id:'rs2',n:'Milenkovic',c:'Serbia',p:'DEF',r:'silver',f:'🇷🇸'},
+  {id:'rs3',n:'Veljković',c:'Serbia',p:'DEF',r:'silver',f:'🇷🇸'},
+  {id:'rs4',n:'Pavlović N',c:'Serbia',p:'DEF',r:'bronze',f:'🇷🇸'},
+  {id:'rs5',n:'Živković',c:'Serbia',p:'DEF',r:'bronze',f:'🇷🇸'},
+  {id:'rs6',n:'Lukić S',c:'Serbia',p:'MID',r:'silver',f:'🇷🇸'},
+  {id:'rs7',n:'Tadić',c:'Serbia',p:'MID',r:'gold',f:'🇷🇸'},
+  {id:'rs8',n:'Ilic S',c:'Serbia',p:'MID',r:'silver',f:'🇷🇸'},
+  {id:'rs9',n:'Mitrović',c:'Serbia',p:'FWD',r:'gold',f:'🇷🇸'},
+  {id:'rs10',n:'Jović L',c:'Serbia',p:'FWD',r:'silver',f:'🇷🇸'},
+  {id:'rs11',n:'Vlahović',c:'Serbia',p:'FWD',r:'gold',f:'🇷🇸'},
+  {id:'pa1',n:'Mosquera',c:'Panama',p:'GK',r:'silver',f:'🇵🇦'},
+  {id:'pa2',n:'Murillo',c:'Panama',p:'DEF',r:'bronze',f:'🇵🇦'},
+  {id:'pa3',n:'Escobar',c:'Panama',p:'DEF',r:'bronze',f:'🇵🇦'},
+  {id:'pa4',n:'Córdoba E',c:'Panama',p:'DEF',r:'bronze',f:'🇵🇦'},
+  {id:'pa5',n:'Davis E',c:'Panama',p:'DEF',r:'bronze',f:'🇵🇦'},
+  {id:'pa6',n:'Godoy',c:'Panama',p:'MID',r:'bronze',f:'🇵🇦'},
+  {id:'pa7',n:'Gómez A',c:'Panama',p:'MID',r:'silver',f:'🇵🇦'},
+  {id:'pa8',n:'Fajardo',c:'Panama',p:'MID',r:'bronze',f:'🇵🇦'},
+  {id:'pa9',n:'Bárcenas',c:'Panama',p:'FWD',r:'silver',f:'🇵🇦'},
+  {id:'pa10',n:'Blackburn',c:'Panama',p:'FWD',r:'bronze',f:'🇵🇦'},
+  {id:'pa11',n:'Adames',c:'Panama',p:'FWD',r:'bronze',f:'🇵🇦'},
+  {id:'nz1',n:'Sail',c:'New Zealand',p:'GK',r:'silver',f:'🇳🇿'},
+  {id:'nz2',n:'Cacace',c:'New Zealand',p:'DEF',r:'silver',f:'🇳🇿'},
+  {id:'nz3',n:'Boxall',c:'New Zealand',p:'DEF',r:'bronze',f:'🇳🇿'},
+  {id:'nz4',n:'Payne',c:'New Zealand',p:'DEF',r:'bronze',f:'🇳🇿'},
+  {id:'nz5',n:'Waine',c:'New Zealand',p:'DEF',r:'bronze',f:'🇳🇿'},
+  {id:'nz6',n:'Garbett',c:'New Zealand',p:'MID',r:'bronze',f:'🇳🇿'},
+  {id:'nz7',n:'Rojas J',c:'New Zealand',p:'MID',r:'silver',f:'🇳🇿'},
+  {id:'nz8',n:'de Jong R',c:'New Zealand',p:'MID',r:'silver',f:'🇳🇿'},
+  {id:'nz9',n:'Wood C',c:'New Zealand',p:'FWD',r:'gold',f:'🇳🇿'},
+  {id:'nz10',n:'Cacace A',c:'New Zealand',p:'FWD',r:'bronze',f:'🇳🇿'},
+  {id:'nz11',n:'Bell R',c:'New Zealand',p:'FWD',r:'bronze',f:'🇳🇿'},
+  {id:'sa1',n:'Al-Owais',c:'Saudi Arabia',p:'GK',r:'silver',f:'🇸🇦'},
+  {id:'sa2',n:'Al-Ghannam',c:'Saudi Arabia',p:'DEF',r:'bronze',f:'🇸🇦'},
+  {id:'sa3',n:'Al-Tambakti',c:'Saudi Arabia',p:'DEF',r:'silver',f:'🇸🇦'},
+  {id:'sa4',n:'Albulayhi',c:'Saudi Arabia',p:'DEF',r:'bronze',f:'🇸🇦'},
+  {id:'sa5',n:'Al-Shahrani',c:'Saudi Arabia',p:'DEF',r:'bronze',f:'🇸🇦'},
+  {id:'sa6',n:'Al-Malki',c:'Saudi Arabia',p:'MID',r:'bronze',f:'🇸🇦'},
+  {id:'sa7',n:'Kanno',c:'Saudi Arabia',p:'MID',r:'silver',f:'🇸🇦'},
+  {id:'sa8',n:'Al-Dawsari',c:'Saudi Arabia',p:'FWD',r:'gold',f:'🇸🇦'},
+  {id:'sa9',n:'Al-Shehri',c:'Saudi Arabia',p:'FWD',r:'silver',f:'🇸🇦'},
+  {id:'sa10',n:'Bahebri',c:'Saudi Arabia',p:'FWD',r:'bronze',f:'🇸🇦'},
+  {id:'sa11',n:'Al-Buraikan',c:'Saudi Arabia',p:'FWD',r:'silver',f:'🇸🇦'},
+  {id:'eg1',n:'El-Shenawy',c:'Egypt',p:'GK',r:'silver',f:'🇪🇬'},
+  {id:'eg2',n:'Kahraba',c:'Egypt',p:'DEF',r:'bronze',f:'🇪🇬'},
+  {id:'eg3',n:'Hamdi',c:'Egypt',p:'DEF',r:'bronze',f:'🇪🇬'},
+  {id:'eg4',n:'Abdelmonem',c:'Egypt',p:'DEF',r:'silver',f:'🇪🇬'},
+  {id:'eg5',n:'El-Wensh',c:'Egypt',p:'DEF',r:'bronze',f:'🇪🇬'},
+  {id:'eg6',n:'Elneny',c:'Egypt',p:'MID',r:'silver',f:'🇪🇬'},
+  {id:'eg7',n:'Zizo',c:'Egypt',p:'MID',r:'bronze',f:'🇪🇬'},
+  {id:'eg8',n:'El-Solia',c:'Egypt',p:'MID',r:'bronze',f:'🇪🇬'},
+  {id:'eg9',n:'Salah M',c:'Egypt',p:'FWD',r:'gold',f:'🇪🇬'},
+  {id:'eg10',n:'Trezeguet',c:'Egypt',p:'FWD',r:'silver',f:'🇪🇬'},
+  {id:'eg11',n:'Marmoush',c:'Egypt',p:'FWD',r:'gold',f:'🇪🇬'},
+  {id:'cv1',n:'Vozinha',c:'Cape Verde',p:'GK',r:'bronze',f:'🇨🇻'},
+  {id:'cv2',n:'Varela B',c:'Cape Verde',p:'DEF',r:'bronze',f:'🇨🇻'},
+  {id:'cv3',n:'Roberto Lopes',c:'Cape Verde',p:'DEF',r:'silver',f:'🇨🇻'},
+  {id:'cv4',n:'Fali',c:'Cape Verde',p:'DEF',r:'bronze',f:'🇨🇻'},
+  {id:'cv5',n:'Rui Correia',c:'Cape Verde',p:'DEF',r:'bronze',f:'🇨🇻'},
+  {id:'cv6',n:'Andrade M',c:'Cape Verde',p:'MID',r:'bronze',f:'🇨🇻'},
+  {id:'cv7',n:'Jamiro',c:'Cape Verde',p:'MID',r:'silver',f:'🇨🇻'},
+  {id:'cv8',n:'Garry Rodrigues',c:'Cape Verde',p:'FWD',r:'silver',f:'🇨🇻'},
+  {id:'cv9',n:'Dyego Sousa',c:'Cape Verde',p:'FWD',r:'silver',f:'🇨🇻'},
+  {id:'cv10',n:'Tavares N',c:'Cape Verde',p:'FWD',r:'bronze',f:'🇨🇻'},
+  {id:'cv11',n:'Júnior Alves',c:'Cape Verde',p:'MID',r:'bronze',f:'🇨🇻'},
+  {id:'iq1',n:'Hamid',c:'Iraq',p:'GK',r:'bronze',f:'🇮🇶'},
+  {id:'iq2',n:'Amjed',c:'Iraq',p:'DEF',r:'bronze',f:'🇮🇶'},
+  {id:'iq3',n:'Jasim',c:'Iraq',p:'DEF',r:'bronze',f:'🇮🇶'},
+  {id:'iq4',n:'Mohammed H',c:'Iraq',p:'DEF',r:'bronze',f:'🇮🇶'},
+  {id:'iq5',n:'Ali Adnan',c:'Iraq',p:'DEF',r:'silver',f:'🇮🇶'},
+  {id:'iq6',n:'Al-Zubaydi',c:'Iraq',p:'MID',r:'bronze',f:'🇮🇶'},
+  {id:'iq7',n:'Hasan A',c:'Iraq',p:'MID',r:'bronze',f:'🇮🇶'},
+  {id:'iq8',n:'Kareem A',c:'Iraq',p:'MID',r:'bronze',f:'🇮🇶'},
+  {id:'iq9',n:'Mohanad Ali',c:'Iraq',p:'FWD',r:'silver',f:'🇮🇶'},
+  {id:'iq10',n:'Aymen',c:'Iraq',p:'FWD',r:'silver',f:'🇮🇶'},
+  {id:'iq11',n:'Hashim',c:'Iraq',p:'FWD',r:'bronze',f:'🇮🇶'},
+  {id:'jo1',n:'Shafei',c:'Jordan',p:'GK',r:'bronze',f:'🇯🇴'},
+  {id:'jo2',n:'Al-Rawabdeh',c:'Jordan',p:'DEF',r:'bronze',f:'🇯🇴'},
+  {id:'jo3',n:'Musa J',c:'Jordan',p:'DEF',r:'bronze',f:'🇯🇴'},
+  {id:'jo4',n:'Sukar',c:'Jordan',p:'DEF',r:'bronze',f:'🇯🇴'},
+  {id:'jo5',n:'Al-Ababneh',c:'Jordan',p:'DEF',r:'bronze',f:'🇯🇴'},
+  {id:'jo6',n:'Mahmoud M',c:'Jordan',p:'MID',r:'bronze',f:'🇯🇴'},
+  {id:'jo7',n:'Bani Yaseen',c:'Jordan',p:'MID',r:'bronze',f:'🇯🇴'},
+  {id:'jo8',n:'Al-Naimat',c:'Jordan',p:'MID',r:'bronze',f:'🇯🇴'},
+  {id:'jo9',n:'Yazan Al-Naimat',c:'Jordan',p:'FWD',r:'silver',f:'🇯🇴'},
+  {id:'jo10',n:'Bani Attiah',c:'Jordan',p:'FWD',r:'bronze',f:'🇯🇴'},
+  {id:'jo11',n:'Hamdan',c:'Jordan',p:'FWD',r:'bronze',f:'🇯🇴'},
+  {id:'uz1',n:'Nortdzhanov',c:'Uzbekistan',p:'GK',r:'bronze',f:'🇺🇿'},
+  {id:'uz2',n:'Jalolov',c:'Uzbekistan',p:'DEF',r:'bronze',f:'🇺🇿'},
+  {id:'uz3',n:'Ashurmatov',c:'Uzbekistan',p:'DEF',r:'silver',f:'🇺🇿'},
+  {id:'uz4',n:'Khasanov',c:'Uzbekistan',p:'DEF',r:'bronze',f:'🇺🇿'},
+  {id:'uz5',n:'Alijonov',c:'Uzbekistan',p:'DEF',r:'bronze',f:'🇺🇿'},
+  {id:'uz6',n:'Komilov',c:'Uzbekistan',p:'MID',r:'bronze',f:'🇺🇿'},
+  {id:'uz7',n:'Masharipov',c:'Uzbekistan',p:'MID',r:'silver',f:'🇺🇿'},
+  {id:'uz8',n:'Tursunov',c:'Uzbekistan',p:'MID',r:'bronze',f:'🇺🇿'},
+  {id:'uz9',n:'Shomurodov',c:'Uzbekistan',p:'FWD',r:'silver',f:'🇺🇿'},
+  {id:'uz10',n:'Rashidov',c:'Uzbekistan',p:'FWD',r:'bronze',f:'🇺🇿'},
+  {id:'uz11',n:'Jaloliddinov',c:'Uzbekistan',p:'FWD',r:'bronze',f:'🇺🇿'},
+  {id:'cd1',n:'Epassy',c:'DR Congo',p:'GK',r:'silver',f:'🇨🇩'},
+  {id:'cd2',n:'Nganga',c:'DR Congo',p:'DEF',r:'bronze',f:'🇨🇩'},
+  {id:'cd3',n:'Mbemba',c:'DR Congo',p:'DEF',r:'silver',f:'🇨🇩'},
+  {id:'cd4',n:'Boyata',c:'DR Congo',p:'DEF',r:'silver',f:'🇨🇩'},
+  {id:'cd5',n:'Bolasie',c:'DR Congo',p:'DEF',r:'bronze',f:'🇨🇩'},
+  {id:'cd6',n:'Tshimanga',c:'DR Congo',p:'MID',r:'bronze',f:'🇨🇩'},
+  {id:'cd7',n:'Lokonga',c:'DR Congo',p:'MID',r:'silver',f:'🇨🇩'},
+  {id:'cd8',n:'Balele',c:'DR Congo',p:'MID',r:'bronze',f:'🇨🇩'},
+  {id:'cd9',n:'Batshuayi',c:'DR Congo',p:'FWD',r:'silver',f:'🇨🇩'},
+  {id:'cd10',n:'Masuaku',c:'DR Congo',p:'FWD',r:'bronze',f:'🇨🇩'},
+  {id:'cd11',n:'Inonga',c:'DR Congo',p:'FWD',r:'bronze',f:'🇨🇩'},
+  {id:'qa1',n:'Al-Sheeb',c:'Qatar',p:'GK',r:'silver',f:'🇶🇦'},
+  {id:'qa2',n:'Pedro Miguel',c:'Qatar',p:'DEF',r:'silver',f:'🇶🇦'},
+  {id:'qa3',n:'Khoukhi',c:'Qatar',p:'DEF',r:'silver',f:'🇶🇦'},
+  {id:'qa4',n:'Hassan K',c:'Qatar',p:'DEF',r:'bronze',f:'🇶🇦'},
+  {id:'qa5',n:'Salman',c:'Qatar',p:'DEF',r:'bronze',f:'🇶🇦'},
+  {id:'qa6',n:'Al-Haydos',c:'Qatar',p:'MID',r:'silver',f:'🇶🇦'},
+  {id:'qa7',n:'Boudiaf',c:'Qatar',p:'MID',r:'silver',f:'🇶🇦'},
+  {id:'qa8',n:'Al-Harami',c:'Qatar',p:'MID',r:'bronze',f:'🇶🇦'},
+  {id:'qa9',n:'Almoez',c:'Qatar',p:'FWD',r:'gold',f:'🇶🇦'},
+  {id:'qa10',n:'Afif',c:'Qatar',p:'FWD',r:'gold',f:'🇶🇦'},
+  {id:'qa11',n:'Al-Rawi',c:'Qatar',p:'FWD',r:'bronze',f:'🇶🇦'},
+  {id:'za1',n:'Williams R',c:'South Africa',p:'GK',r:'silver',f:'🇿🇦'},
+  {id:'za2',n:'Mudau',c:'South Africa',p:'DEF',r:'silver',f:'🇿🇦'},
+  {id:'za3',n:'Sesane',c:'South Africa',p:'DEF',r:'bronze',f:'🇿🇦'},
+  {id:'za4',n:'Daniels',c:'South Africa',p:'DEF',r:'bronze',f:'🇿🇦'},
+  {id:'za5',n:'De Reuck',c:'South Africa',p:'DEF',r:'bronze',f:'🇿🇦'},
+  {id:'za6',n:'Mvala',c:'South Africa',p:'MID',r:'silver',f:'🇿🇦'},
+  {id:'za7',n:'Zungu',c:'South Africa',p:'MID',r:'silver',f:'🇿🇦'},
+  {id:'za8',n:'Dolly',c:'South Africa',p:'FWD',r:'silver',f:'🇿🇦'},
+  {id:'za9',n:'Mothiba',c:'South Africa',p:'FWD',r:'silver',f:'🇿🇦'},
+  {id:'za10',n:'Foster P',c:'South Africa',p:'FWD',r:'bronze',f:'🇿🇦'},
+  {id:'za11',n:'Hlongwane',c:'South Africa',p:'FWD',r:'silver',f:'🇿🇦'},
+  {id:'cz1',n:'Staněk',c:'Czechia',p:'GK',r:'silver',f:'🇨🇿'},
+  {id:'cz2',n:'Coufal',c:'Czechia',p:'DEF',r:'silver',f:'🇨🇿'},
+  {id:'cz3',n:'Brabec',c:'Czechia',p:'DEF',r:'bronze',f:'🇨🇿'},
+  {id:'cz4',n:'Kúdela',c:'Czechia',p:'DEF',r:'bronze',f:'🇨🇿'},
+  {id:'cz5',n:'Novák',c:'Czechia',p:'DEF',r:'silver',f:'🇨🇿'},
+  {id:'cz6',n:'Souček',c:'Czechia',p:'MID',r:'gold',f:'🇨🇿'},
+  {id:'cz7',n:'Barák',c:'Czechia',p:'MID',r:'silver',f:'🇨🇿'},
+  {id:'cz8',n:'Sadílek',c:'Czechia',p:'MID',r:'bronze',f:'🇨🇿'},
+  {id:'cz9',n:'Kuchta',c:'Czechia',p:'FWD',r:'silver',f:'🇨🇿'},
+  {id:'cz10',n:'Chytil',c:'Czechia',p:'FWD',r:'silver',f:'🇨🇿'},
+  {id:'cz11',n:'Schick',c:'Czechia',p:'FWD',r:'gold',f:'🇨🇿'},
+  {id:'cw1',n:'Van Aanholt',c:'Curaçao',p:'GK',r:'bronze',f:'🇨🇼'},
+  {id:'cw2',n:'Mukansanga',c:'Curaçao',p:'DEF',r:'bronze',f:'🇨🇼'},
+  {id:'cw3',n:'Haps',c:'Curaçao',p:'DEF',r:'bronze',f:'🇨🇼'},
+  {id:'cw4',n:'Kwidama',c:'Curaçao',p:'DEF',r:'bronze',f:'🇨🇼'},
+  {id:'cw5',n:'Emeran',c:'Curaçao',p:'DEF',r:'bronze',f:'🇨🇼'},
+  {id:'cw6',n:'Fer',c:'Curaçao',p:'MID',r:'silver',f:'🇨🇼'},
+  {id:'cw7',n:'Clasie',c:'Curaçao',p:'MID',r:'silver',f:'🇨🇼'},
+  {id:'cw8',n:'Duk',c:'Curaçao',p:'FWD',r:'silver',f:'🇨🇼'},
+  {id:'cw9',n:'Bonevacia',c:'Curaçao',p:'FWD',r:'silver',f:'🇨🇼'},
+  {id:'cw10',n:'Hasselbaink J',c:'Curaçao',p:'FWD',r:'bronze',f:'🇨🇼'},
+  {id:'cw11',n:'Janssen V',c:'Curaçao',p:'FWD',r:'silver',f:'🇨🇼'},
+  {id:'ht1',n:'Joseph K',c:'Haiti',p:'GK',r:'bronze',f:'🇭🇹'},
+  {id:'ht2',n:'Doze',c:'Haiti',p:'DEF',r:'bronze',f:'🇭🇹'},
+  {id:'ht3',n:'Jérôme',c:'Haiti',p:'DEF',r:'bronze',f:'🇭🇹'},
+  {id:'ht4',n:'Beauvue',c:'Haiti',p:'DEF',r:'bronze',f:'🇭🇹'},
+  {id:'ht5',n:'Pierre A',c:'Haiti',p:'DEF',r:'bronze',f:'🇭🇹'},
+  {id:'ht6',n:'Bazile',c:'Haiti',p:'MID',r:'silver',f:'🇭🇹'},
+  {id:'ht7',n:'Herold Jr',c:'Haiti',p:'MID',r:'bronze',f:'🇭🇹'},
+  {id:'ht8',n:'Frantzdy',c:'Haiti',p:'MID',r:'bronze',f:'🇭🇹'},
+  {id:'ht9',n:'Sadi',c:'Haiti',p:'FWD',r:'silver',f:'🇭🇹'},
+  {id:'ht10',n:'Pierre J',c:'Haiti',p:'FWD',r:'silver',f:'🇭🇹'},
+  {id:'ht11',n:'Nazon',c:'Haiti',p:'FWD',r:'bronze',f:'🇭🇹'},
 ];
 const PREDS=[
   // ── Window 1 — Group Stage Matchday 1 (Jun 11–17) ──
@@ -1440,9 +2219,9 @@ async function tryAutoLogin(){
   CU=p;await loadAll();launchApp();return true;
 }
 async function giveStarterPack(pid){
-  const cards=drawCards(16);
+  const cards=drawCards(40);
   const ops=cards.map(c=>({op:'set',col:'cards',id:'c'+Date.now()+Math.random().toString(36).slice(2),data:{...c,ownerId:pid,points:0,status:'owned',acquiredAt:ST()}}));
-  ops.push({op:'update',col:'players',id:pid,data:{cardCount:INC(16)}});
+  ops.push({op:'update',col:'players',id:pid,data:{cardCount:INC(40)}});
   await fsBatch(ops);
 }
 function drawCards(n){return Array.from({length:n},()=>{const r=pickR();const pool=POOL.filter(p=>p.r===r);const src=pool.length?pool:POOL;const p=src[Math.floor(Math.random()*src.length)];return{realPlayerId:p.id,name:p.n,country:p.c,pos:p.p,rarity:p.r,flag:p.f};});}
@@ -1667,9 +2446,9 @@ async function openPack(){
   if((CU.bricks||0)<50){toast('Need 50 🧱!','err');return;}
   const btn=document.getElementById('pack-btn');btn.disabled=true;btn.textContent='Opening…';
   await fsUpdate('players',CU.id,{bricks:INC(-50)});CU.bricks=(CU.bricks||0)-50;
-  const cards=drawCards(3);const drawn=[];
+  const cards=drawCards(15);const drawn=[];
   const ops=cards.map(c=>{const id='c'+Date.now()+Math.random().toString(36).slice(2,6);const d={...c,ownerId:CU.id,points:0,status:'owned',acquiredAt:ST()};drawn.push({id,...d});return{op:'set',col:'cards',id,data:d};});
-  ops.push({op:'update',col:'players',id:CU.id,data:{cardCount:INC(3)}});
+  ops.push({op:'update',col:'players',id:CU.id,data:{cardCount:INC(15)}});
   await fsBatch(ops);
   btn.classList.add('hidden');document.getElementById('pack-reveal').classList.remove('hidden');
   const rc=document.getElementById('pack-cards');rc.innerHTML='';
@@ -1696,7 +2475,7 @@ async function renderMkt(){
 
   if(mktFlt==='packs'){
     const el=document.createElement('div');el.className='mkt-listing';
-    el.innerHTML='<div style="font-size:36px;flex-shrink:0;">📦</div><div class="mkt-info"><div class="mkt-name">Standard Card Pack</div><div class="mkt-meta">3 random players · Bronze/Silver/Gold</div><div class="mkt-seller">Always available</div></div><div class="mkt-right"><div style="font-family:var(--fm);font-size:13px;font-weight:700;color:var(--accent);">50 🧱</div><button class="btn btn-primary btn-sm" onclick="goScreen(\'packs\')">Buy</button></div>';
+    el.innerHTML='<div style="font-size:36px;flex-shrink:0;">📦</div><div class="mkt-info"><div class="mkt-name">Standard Card Pack</div><div class="mkt-meta">15 random players · Bronze/Silver/Gold</div><div class="mkt-seller">Always available</div></div><div class="mkt-right"><div style="font-family:var(--fm);font-size:13px;font-weight:700;color:var(--accent);">50 🧱</div><button class="btn btn-primary btn-sm" onclick="goScreen(\'packs\')">Buy</button></div>';
     con.appendChild(el);return;
   }
 
@@ -1917,10 +2696,10 @@ function buildBracket(){
 
 // ── HOW TO PLAY ──
 const HTP=[
-  {n:1,t:'Join & Get Your Cards',d:'Enter your first name (admin only) and a public nickname. You\'ll get <strong>16 free cards</strong> and <strong>100 🧱</strong>. Rarities: Bronze (common), Silver (starter), Gold (world-class).',chips:[['gold','16 Free Cards'],['gold','100 🧱'],['','Bronze · Silver · Gold']]},
+  {n:1,t:'Join & Get Your Cards',d:'Enter your first name (admin only) and a public nickname. You\'ll get <strong>16 free cards</strong> and <strong>100 🧱</strong>. Rarities: Bronze (common), Silver (starter), Gold (world-class).',chips:[['gold','40 Free Cards'],['gold','100 🧱'],['','Bronze · Silver · Gold']]},
   {n:2,t:'Pick Your Starting 11',d:'<strong>1 GK · 4 DEF · 3 MID · 3 FWD</strong>. Only your Starting 11 scores points. Auto-Fill picks your best available.',chips:[['green','1 GK · 4 DEF · 3 MID · 3 FWD'],['red','Bench doesn\'t score']]},
   {n:3,t:'Earn Points Every Match',d:'<strong>Goal +8 · Assist +5 · Win +4 · Draw +2 · Clean Sheet (GK/DEF) +5 · Red −5</strong>.',chips:[['gold','Goal +8'],['gold','Win +4'],['green','Clean Sheet +5'],['red','Red −5']]},
-  {n:4,t:'Buy & Sell Players',d:'Spend bricks on <strong>Card Packs</strong> (50 🧱 → 3 random players) or grab players from the <strong>Window Store</strong> (⚡ 30 🧱 each — 20 players appear when each window opens, fastest fingers first). To sell: <strong>My Cards → tap → List on Market</strong>. Max 3 listings, 10% fee.',chips:[['gold','50 🧱 → Card Pack'],['gold','⚡ 30🧱 → Window Store'],['green','+20🧱 every window'],['','Max 3 listings']]},
+  {n:4,t:'Buy & Sell Players',d:'Spend bricks on <strong>Card Packs</strong> (50 🧱 → 15 random players) or grab players from the <strong>Window Store</strong> (⚡ 30 🧱 each — 20 players appear when each window opens, fastest fingers first). To sell: <strong>My Cards → tap → List on Market</strong>. Max 3 listings, 10% fee.',chips:[['gold','50 🧱 → 15 cards'],['gold','⚡ 30🧱 → Window Store'],['green','+20🧱 every window'],['','Max 3 listings']]},
   {n:5,t:'Earn Bricks',d:'<strong>Predictions</strong> — 3 per window. Submit them <em>before the window locks</em> (the lock time is shown on the Fixtures screen). Safe +10🧱, Brave +20🧱, Chaos +40🧱 if you get it right. Safe + Brave pay out automatically after matches finish. Chaos predictions are resolved by admin. <strong>Participation bonus</strong> — +20 🧱 automatically paid when each new window opens (just have a saved team). <strong>Market sales</strong> — earn bricks when someone buys your listed card.',chips:[['green','Safe: +10🧱 auto-paid'],['gold','Brave: +20🧱 auto-paid'],['red','Chaos: +40🧱 admin resolves'],['gold','New window: +20🧱']]},
 ];
 function buildHowTo(){
