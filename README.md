@@ -19,10 +19,6 @@ brick_cup_scorer.py     — Auto-scorer cron script (runs via GitHub Actions)
 3. Build settings: Framework = None, Build command = (empty), Output = /
 4. Deploy. Your game URL will be something like `brick-cup.pages.dev`
 
-### Step 2 — GitHub Secrets
-In your GitHub repo → Settings → Secrets → Actions, add:
-- `FDKEY` = `bea2dd3c46ea4a31856a81c6828dd835`
-- `FIREBASE_KEY` = `AIzaSyCF8NqKVTqBuV37qAaefzL6q6RVjoChous`
 
 ### Step 3 — Firestore Rules
 In Firebase Console → Firestore → Rules, set:
