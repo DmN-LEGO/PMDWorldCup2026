@@ -1322,7 +1322,6 @@ async function signInWithPin(){
 
 // ── GOOGLE SIGN-IN ──
 async function googleSignIn(){
-  _initFirebase(); // ensure firebase ready even if deferred scripts just arrived
   if(!window._fbAuth){toast('Google sign-in unavailable — use PIN instead','err');return;}
   try{
     const result=await window._fbAuth.signInWithPopup(window._googleProvider);
@@ -2100,21 +2099,72 @@ function renderAlbum(){
     const isOwned = owned.has(p.id) || myCards.some(c => c.name === p.n && c.country === p.c);
     const ownedCard = myCards.find(c => c.name === p.n && c.country === p.c);
     const el = document.createElement('div');
-    el.className = 'pcard ' + (isOwned ? p.r : 'bronze');
-    if(!isOwned) el.style.cssText = 'opacity:0.28;filter:grayscale(1);cursor:default;';
+    // Always show full card — greyed out if not owned
     const rl = {bronze:'B',silver:'S',gold:'G'}[p.r]||'B';
     const pts = ownedCard ? ownedCard.points||0 : 0;
-    // Count duplicates
-    const dupeCount = myCards.filter(c => c.name===p.n && c.country===p.c).length;
-    el.innerHTML = `<div class="rarity-badge rb-${isOwned?p.r:'bronze'}">${isOwned?rl:'?'}</div>
-      <div class="pcard-av">${isOwned ? makeSprite(p.n,p.c) : '<svg viewBox="0 0 48 60" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="60" rx="6" fill="#1a2a1a"/><text x="24" y="34" text-anchor="middle" font-size="22" fill="#2e4a28">?</text></svg>'}</div>
-      <div style="font-size:13px;line-height:1;">${isOwned?p.f:'❓'}</div>
-      <div class="pcard-name">${isOwned?esc(p.n):'???'}</div>
-      <div class="pcard-ctry">${isOwned?esc(p.c):''}</div>
-      <span class="pcard-pos ${p.p}">${p.p}</span>
-      <div class="pcard-pts">${isOwned?pts:'-'}</div>
-      <div class="pcard-pts-lbl">${isOwned?'pts':''}</div>
-      ${dupeCount>1?'<div style="position:absolute;top:5px;left:5px;background:var(--blue);color:#fff;font-family:var(--fm);font-size:8px;padding:2px 4px;border-radius:3px;">x'+dupeCount+'</div>':''}`;
+    const dupeCount = myCards.filter(mc => mc.name===p.n && mc.country===p.c).length;
+
+    el.className = 'pcard ' + p.r; // always show real rarity border colour
+    if(!isOwned){
+      // Greyscale + dim — but card shape, sprite, name all visible
+      el.style.cssText = 'filter:grayscale(1);opacity:0.35;cursor:default;';
+    }
+
+    // Rarity badge — show rarity letter always, lock icon if not owned
+    const rarityBadge = document.createElement('div');
+    rarityBadge.className = 'rarity-badge rb-' + (isOwned ? p.r : 'bronze');
+    rarityBadge.textContent = isOwned ? rl : '🔒';
+    el.appendChild(rarityBadge);
+
+    // Sprite — always rendered (greyscale filter handles the visual dimming)
+    const av = document.createElement('div');
+    av.className = 'pcard-av';
+    av.innerHTML = makeSprite(p.n, p.c);
+    el.appendChild(av);
+
+    // Flag
+    const flagEl = document.createElement('div');
+    flagEl.style.cssText = 'font-size:13px;line-height:1;';
+    flagEl.textContent = p.f || '';
+    el.appendChild(flagEl);
+
+    // Name
+    const nameEl = document.createElement('div');
+    nameEl.className = 'pcard-name';
+    nameEl.textContent = p.n;
+    el.appendChild(nameEl);
+
+    // Country
+    const ctryEl = document.createElement('div');
+    ctryEl.className = 'pcard-ctry';
+    ctryEl.textContent = p.c;
+    el.appendChild(ctryEl);
+
+    // Position
+    const posEl = document.createElement('span');
+    posEl.className = 'pcard-pos ' + p.p;
+    posEl.textContent = p.p;
+    el.appendChild(posEl);
+
+    // Points (only meaningful if owned)
+    const ptsEl = document.createElement('div');
+    ptsEl.className = 'pcard-pts';
+    ptsEl.textContent = isOwned ? pts : '—';
+    el.appendChild(ptsEl);
+
+    const ptsLbl = document.createElement('div');
+    ptsLbl.className = 'pcard-pts-lbl';
+    ptsLbl.textContent = isOwned ? 'pts' : 'not owned';
+    ptsLbl.style.cssText = isOwned ? '' : 'color:var(--muted);';
+    el.appendChild(ptsLbl);
+
+    // Dupe badge
+    if(dupeCount > 1){
+      const dupe = document.createElement('div');
+      dupe.style.cssText = 'position:absolute;top:5px;left:5px;background:var(--blue);color:#fff;font-family:var(--fm);font-size:8px;padding:2px 4px;border-radius:3px;font-weight:700;';
+      dupe.textContent = 'x' + dupeCount;
+      el.appendChild(dupe);
+    }
     grid.appendChild(el);
   });
 }
