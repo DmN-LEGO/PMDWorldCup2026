@@ -36,7 +36,6 @@ brick_cup_scorer.py     — Auto-scorer cron script (runs via GitHub Actions)
 
 - **Game data** (scores, bricks, standings) — updates every 15 minutes automatically
 - **Code** (index.html) — only when you push a new version to GitHub
-- Version badge shown on login screen (bottom-right)
 
 ## Firebase project
 - Project ID: `worldcup2026-4d178`
